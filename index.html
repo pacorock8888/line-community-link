@@ -4,19 +4,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>加入課程 LINE 社群</title>
-  <meta name="description" content="加入課程 LINE 社群，接收複習課程資訊。">
+  <title>複習分享會 LINE 社群入口</title>
+  <meta name="description" content="選擇課程場次並加入對應的 LINE 社群。">
   <style>
     :root {
       color-scheme: light;
       --line: #06c755;
       --ink: #17211b;
-      --muted: #5f6f66;
+      --muted: #637268;
       --panel: #ffffff;
-      --soft: #eff8f2;
-      --edge: #d6eadc;
-      --warn: #9b5b00;
-      --warn-bg: #fff6df;
+      --soft: #f4f7f2;
+      --edge: #dce7df;
+      --strong-edge: #bdd3c4;
+      --accent: #295b3c;
+      --copy: #eef5ef;
     }
 
     * {
@@ -28,179 +29,337 @@
       min-height: 100vh;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
       color: var(--ink);
-      background:
-        radial-gradient(circle at 20% 15%, rgba(6, 199, 85, 0.16), transparent 28rem),
-        linear-gradient(145deg, #f9fffb 0%, #eaf6ee 55%, #f7faf8 100%);
+      background: #f7f8f5;
     }
 
     main {
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px 18px;
+      width: min(100%, 760px);
+      margin: 0 auto;
+      padding: 28px 16px 36px;
     }
 
-    .panel {
-      width: min(100%, 440px);
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      box-shadow: 0 22px 60px rgba(19, 67, 36, 0.12);
-      padding: 30px 24px 24px;
+    .hero {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 4px 22px;
     }
 
-    .mark {
-      width: 56px;
-      height: 56px;
+    .avatar {
+      width: 72px;
+      height: 72px;
+      flex: 0 0 auto;
       display: grid;
       place-items: center;
-      border-radius: 8px;
-      background: var(--line);
-      color: white;
+      border: 2px solid #fff;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--accent), #3f8758);
+      box-shadow: 0 10px 26px rgba(23, 33, 27, 0.14);
+      color: #fff;
+      font-size: 24px;
       font-weight: 800;
-      font-size: 22px;
-      line-height: 1;
-      margin-bottom: 18px;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      display: none;
+      object-fit: cover;
+    }
+
+    .avatar.has-image span {
+      display: none;
+    }
+
+    .avatar.has-image img {
+      display: block;
     }
 
     h1 {
       margin: 0;
-      font-size: 30px;
-      line-height: 1.2;
+      font-size: 28px;
+      line-height: 1.22;
       letter-spacing: 0;
     }
 
-    p {
-      margin: 14px 0 0;
+    .intro {
+      margin: 8px 0 0;
       color: var(--muted);
       font-size: 16px;
-      line-height: 1.65;
+      line-height: 1.55;
     }
 
-    .button {
+    .course-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .course {
+      padding: 18px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: 0 10px 30px rgba(31, 56, 39, 0.08);
+    }
+
+    .course-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .course-title {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .badge {
+      min-width: max-content;
+      padding: 5px 9px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--soft);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .course-note {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+
+    .join {
       width: 100%;
-      min-height: 56px;
-      margin-top: 24px;
+      min-height: 54px;
+      margin-top: 16px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 9px;
       border: 0;
       border-radius: 8px;
       background: var(--line);
       color: #fff;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 800;
       text-decoration: none;
-      box-shadow: 0 12px 26px rgba(6, 199, 85, 0.26);
+      box-shadow: 0 12px 24px rgba(6, 199, 85, 0.22);
       cursor: pointer;
     }
 
-    .button[aria-disabled="true"] {
-      background: #95baa1;
-      box-shadow: none;
-      cursor: not-allowed;
-    }
-
-    .button svg {
-      width: 22px;
-      height: 22px;
+    .join svg,
+    .copy-button svg {
+      width: 20px;
+      height: 20px;
       flex: 0 0 auto;
     }
 
     .fallback {
-      margin-top: 18px;
-      padding: 14px;
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: stretch;
+      padding: 10px;
+      border: 1px solid var(--edge);
       border-radius: 8px;
       background: var(--soft);
-      border: 1px solid var(--edge);
-      overflow-wrap: anywhere;
     }
 
-    .fallback strong {
-      display: block;
-      margin-bottom: 6px;
-      font-size: 14px;
+    .fallback-text {
+      min-width: 0;
+      display: grid;
+      align-content: center;
+      gap: 3px;
     }
 
-    .fallback code {
+    .fallback-label {
       color: var(--muted);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .fallback-url {
+      overflow: hidden;
+      color: var(--ink);
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .copy-button {
+      min-width: 46px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 8px;
+      background: var(--copy);
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .copy-button:focus-visible,
+    .join:focus-visible {
+      outline: 3px solid rgba(6, 199, 85, 0.28);
+      outline-offset: 2px;
+    }
+
+    .status {
+      min-height: 20px;
+      margin: 10px 2px 0;
+      color: var(--accent);
       font-size: 13px;
       line-height: 1.5;
     }
 
-    .notice {
-      display: none;
-      margin-top: 16px;
-      padding: 12px 14px;
-      border: 1px solid #f4d287;
-      border-radius: 8px;
-      background: var(--warn-bg);
-      color: var(--warn);
-      font-size: 14px;
-      line-height: 1.5;
+    .support {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-left: 4px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
     }
 
-    .is-missing .notice {
-      display: block;
+    .support strong {
+      color: var(--ink);
     }
 
-    @media (max-width: 420px) {
-      .panel {
-        padding: 26px 18px 20px;
+    @media (max-width: 560px) {
+      main {
+        padding-top: 20px;
+      }
+
+      .hero {
+        align-items: flex-start;
+      }
+
+      .avatar {
+        width: 60px;
+        height: 60px;
+        font-size: 21px;
       }
 
       h1 {
-        font-size: 26px;
+        font-size: 24px;
       }
 
-      p {
-        font-size: 15px;
+      .course-head {
+        display: grid;
+      }
+
+      .badge {
+        width: fit-content;
       }
     }
   </style>
 </head>
 <body>
   <main>
-    <section class="panel" id="panel">
-      <div class="mark" aria-hidden="true">LINE</div>
-      <h1>加入課程 LINE 社群</h1>
-      <p>點下方按鈕即可開啟 LINE，加入複習課程社群。</p>
-
-      <a class="button" id="joinButton" href="#" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        加入 LINE 社群
-      </a>
-
-      <div class="fallback">
-        <strong>如果按鈕無法開啟，請複製這個網址：</strong>
-        <code id="fallbackUrl">尚未設定 LINE 社群連結</code>
+    <header class="hero">
+      <div class="avatar" id="avatar" aria-hidden="true">
+        <img src="" alt="">
+        <span>課</span>
       </div>
+      <div>
+        <h1>複習分享會 LINE 社群入口</h1>
+        <p class="intro">請選擇要加入的課程場次，點選按鈕即可開啟 LINE。</p>
+      </div>
+    </header>
 
-      <div class="notice">目前頁面還沒放入 LINE 社群連結。請先提供你的社群邀請網址，我會替你完成設定。</div>
-    </section>
+    <section class="course-list" id="courseList" aria-label="課程社群列表"></section>
+
+    <div class="support">
+      如果無法加入，請洽詢官方 LINE：<strong>@498szsve</strong>
+    </div>
   </main>
 
   <script>
-    const LINE_COMMUNITY_URL = "https://line.me/ti/g2/fA39gcNI-sDLhQg-yM8ajb1_kQvnNCb6K1DkCQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default";
-    const isConfigured = /^https:\/\/.+/i.test(LINE_COMMUNITY_URL)
-      && !LINE_COMMUNITY_URL.includes("PASTE_LINE_COMMUNITY_LINK_HERE");
+    const AVATAR_URL = "";
+    const COURSES = [
+      {
+        title: "5/3（日）二下二段複習分享會",
+        badge: "國二",
+        note: "適合要加入本場複習分享會的家長與學生。",
+        url: "https://line.me/ti/g2/fA39gcNI-sDLhQg-yM8ajb1_kQvnNCb6K1DkCQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
+      }
+    ];
 
-    const panel = document.querySelector("#panel");
-    const button = document.querySelector("#joinButton");
-    const fallback = document.querySelector("#fallbackUrl");
+    const avatar = document.querySelector("#avatar");
+    const avatarImage = avatar.querySelector("img");
+    const courseList = document.querySelector("#courseList");
 
-    if (isConfigured) {
-      button.href = LINE_COMMUNITY_URL;
-      fallback.textContent = LINE_COMMUNITY_URL;
-    } else {
-      panel.classList.add("is-missing");
-      button.setAttribute("aria-disabled", "true");
-      button.addEventListener("click", (event) => event.preventDefault());
+    if (AVATAR_URL) {
+      avatarImage.src = AVATAR_URL;
+      avatar.classList.add("has-image");
     }
+
+    function iconArrow() {
+      return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+
+    function iconCopy() {
+      return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="10" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    }
+
+    function renderCourses() {
+      courseList.innerHTML = COURSES.map((course, index) => `
+        <article class="course">
+          <div class="course-head">
+            <div>
+              <h2 class="course-title">${course.title}</h2>
+              <p class="course-note">${course.note}</p>
+            </div>
+            <span class="badge">${course.badge}</span>
+          </div>
+          <a class="join" href="${course.url}" rel="noopener">
+            ${iconArrow()}
+            加入 LINE 社群
+          </a>
+          <div class="fallback">
+            <div class="fallback-text">
+              <span class="fallback-label">如果按鈕無法開啟，可複製此社群連結</span>
+              <span class="fallback-url">${course.url}</span>
+            </div>
+            <button class="copy-button" type="button" data-copy="${index}" aria-label="複製 ${course.title} 連結">
+              ${iconCopy()}
+            </button>
+          </div>
+          <div class="status" id="status-${index}" role="status" aria-live="polite"></div>
+        </article>
+      `).join("");
+    }
+
+    async function copyCourseUrl(index) {
+      const status = document.querySelector(`#status-${index}`);
+      const url = COURSES[index].url;
+
+      try {
+        await navigator.clipboard.writeText(url);
+        status.textContent = "已複製連結。";
+      } catch (error) {
+        status.textContent = "請長按下方連結並選擇複製。";
+      }
+    }
+
+    renderCourses();
+
+    courseList.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-copy]");
+      if (!button) return;
+      copyCourseUrl(Number(button.dataset.copy));
+    });
   </script>
 </body>
 </html>
