@@ -216,6 +216,7 @@
     }
     .warning-body p { margin: 0; font-size: 16px; line-height: 1.6; }
     .warning-body b { color: var(--accent); font-size: 17px; }
+    .warning-body .hint { margin-top: 2px; color: var(--muted); font-size: 13px; line-height: 1.5; }
 
     .warning-extra {
       margin: 14px 2px 0;
@@ -276,13 +277,13 @@
     <!-- 警語關卡（第一關）-->
     <section id="warningView" class="warning-view" aria-label="加入前須知">
       <div class="warning-card">
-        <h2 class="warning-title">⚠️ 加入前請詳讀｜群內名稱格式</h2>
+        <h2 class="warning-title">⚠️ 進群前必看</h2>
         <div class="warning-body">
-          <p><strong>學生：</strong>名字 ＋ 手機末三碼<br>範例：<b>百宏313</b></p>
-          <p><strong>家長：</strong>某某媽／某某爸 ＋ 手機末三碼<br>範例：<b>百宏媽313</b>、<b>百宏爸313</b></p>
+          <p><strong>學生</strong>：名字＋手機末三碼　例：<b>百宏313</b></p>
+          <p><strong>家長</strong>：名字＋媽／爸＋末三碼　例：<b>百宏媽313</b></p>
+          <p class="hint">＊末三碼＝報名時登記的那支手機號碼後三碼</p>
         </div>
-        <p class="warning-extra">請務必選擇<b>正確的方案</b>，Paco 老師之後會一一核對，請大家配合，避免造成後續的困擾。</p>
-        <p class="warning-note">名稱未依規定者，管理員將直接移除，請務必配合 🙏</p>
+        <p class="warning-note">請選對方案，老師會逐一核對；名稱不符者將被移除 🙏</p>
         <button class="ack-btn" id="ackBtn" type="button" disabled>請詳閱（5）</button>
       </div>
     </section>
