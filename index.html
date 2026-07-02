@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
-  <title>複習分享會 LINE 社群入口</title>
-  <meta name="description" content="選擇課程場次並加入對應的 LINE 社群。">
+  <title>三年級社群入口</title>
+  <meta name="description" content="選擇報名方案，加入對應的 LINE 社群。">
   <style>
     :root {
       color-scheme: light;
@@ -17,12 +17,9 @@
       --edge: #dce7df;
       --strong-edge: #bdd3c4;
       --accent: #295b3c;
-      --copy: #eef5ef;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -62,84 +59,87 @@
       overflow: hidden;
     }
 
-    .avatar img {
+    .avatar img { width: 100%; height: 100%; display: none; object-fit: cover; }
+    .avatar.has-image span { display: none; }
+    .avatar.has-image img { display: block; }
+
+    h1 { margin: 0; font-size: 28px; line-height: 1.22; }
+
+    .intro { margin: 8px 0 0; color: var(--muted); font-size: 16px; line-height: 1.55; }
+
+    .section-title {
+      margin: 4px 2px 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* ---- 方案選擇 ---- */
+    .plan-list { display: grid; gap: 12px; }
+
+    .plan {
       width: 100%;
-      height: 100%;
-      display: none;
-      object-fit: cover;
-    }
-
-    .avatar.has-image span {
-      display: none;
-    }
-
-    .avatar.has-image img {
-      display: block;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: 28px;
-      line-height: 1.22;
-      letter-spacing: 0;
-    }
-
-    .intro {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
-    }
-
-    .course-list {
       display: grid;
+      grid-template-columns: 44px minmax(0, 1fr) 22px;
+      align-items: center;
       gap: 14px;
-    }
-
-    .course {
-      padding: 18px;
+      padding: 16px 18px;
       border: 1px solid var(--edge);
       border-radius: 8px;
       background: var(--panel);
-      box-shadow: 0 10px 30px rgba(31, 56, 39, 0.08);
+      box-shadow: 0 8px 22px rgba(31, 56, 39, 0.06);
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
+      transition: border-color .15s, box-shadow .15s, transform .05s;
     }
 
-    .course-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: flex-start;
-    }
+    .plan:hover { border-color: var(--strong-edge); box-shadow: 0 10px 26px rgba(31, 56, 39, 0.12); }
+    .plan:active { transform: translateY(1px); }
 
-    .course-title {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.3;
-      letter-spacing: 0;
-    }
-
-    .badge {
-      min-width: max-content;
-      padding: 5px 9px;
-      border: 1px solid var(--strong-edge);
-      border-radius: 999px;
-      color: var(--accent);
+    .plan-code {
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      border-radius: 10px;
       background: var(--soft);
-      font-size: 13px;
-      font-weight: 700;
+      border: 1px solid var(--strong-edge);
+      color: var(--accent);
+      font-size: 20px; font-weight: 800;
     }
 
-    .course-note {
-      margin: 8px 0 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
+    .plan-body { min-width: 0; }
+    .plan-label { font-size: 16px; font-weight: 700; }
+    .plan-desc { margin-top: 3px; color: var(--muted); font-size: 14px; line-height: 1.5; }
+    .plan-arrow { color: var(--strong-edge); font-size: 20px; }
+
+    /* ---- 加入社群檢視 ---- */
+    .join-view { display: none; }
+    .join-view.active { display: block; }
+    .plan-list.hidden { display: none; }
+
+    .back {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin: 0 0 14px;
+      border: 0; background: none; padding: 4px 0;
+      color: var(--accent); font: inherit; font-weight: 700; font-size: 15px;
+      cursor: pointer;
     }
+
+    .chosen {
+      padding: 14px 16px;
+      margin-bottom: 16px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 8px;
+      background: var(--soft);
+      font-size: 15px; line-height: 1.55;
+    }
+    .chosen strong { color: var(--accent); }
 
     .join {
       width: 100%;
-      min-height: 54px;
-      margin-top: 16px;
+      min-height: 56px;
+      margin-bottom: 12px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -154,74 +154,26 @@
       box-shadow: 0 12px 24px rgba(6, 199, 85, 0.22);
       cursor: pointer;
     }
+    .join svg { width: 20px; height: 20px; flex: 0 0 auto; }
+    .join .join-name { }
 
-    .join svg,
-    .copy-button svg {
-      width: 20px;
-      height: 20px;
-      flex: 0 0 auto;
+    .copy-line {
+      display: flex; justify-content: flex-end;
+      margin: -6px 2px 16px;
     }
-
-    .fallback {
-      margin-top: 12px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 8px;
-      align-items: stretch;
-      padding: 10px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: var(--soft);
-    }
-
-    .fallback-text {
-      min-width: 0;
-      display: grid;
-      align-content: center;
-      gap: 3px;
-    }
-
-    .fallback-label {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.3;
-    }
-
-    .fallback-url {
-      overflow: hidden;
-      color: var(--ink);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-      line-height: 1.35;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
     .copy-button {
-      min-width: 46px;
+      display: inline-flex; align-items: center; gap: 6px;
       border: 1px solid var(--strong-edge);
       border-radius: 8px;
-      background: var(--copy);
+      background: #eef5ef;
       color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      font: inherit; font-size: 13px;
+      padding: 6px 10px;
       cursor: pointer;
     }
+    .copy-button svg { width: 15px; height: 15px; }
 
-    .copy-button:focus-visible,
-    .join:focus-visible {
-      outline: 3px solid rgba(6, 199, 85, 0.28);
-      outline-offset: 2px;
-    }
-
-    .status {
-      min-height: 20px;
-      margin: 10px 2px 0;
-      color: var(--accent);
-      font-size: 13px;
-      line-height: 1.5;
-    }
+    .status { min-height: 18px; margin: -8px 2px 14px; color: var(--accent); font-size: 13px; }
 
     .support {
       margin-top: 18px;
@@ -232,39 +184,79 @@
       font-size: 15px;
       line-height: 1.6;
     }
+    .support strong { color: var(--ink); }
 
-    .support strong {
+    /* ---- 警語關卡 ---- */
+    .warning-view { display: block; }
+    .warning-view.hidden { display: none; }
+
+    .warning-card {
+      padding: 22px 20px 20px;
+      border: 2px solid var(--strong-edge);
+      border-radius: 12px;
+      background: var(--panel);
+      box-shadow: 0 12px 30px rgba(31, 56, 39, 0.10);
+    }
+
+    .warning-title {
+      margin: 0 0 14px;
+      font-size: 20px;
+      line-height: 1.35;
+      color: #b3261e;
+      text-align: center;
+    }
+
+    .warning-body {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      border-radius: 8px;
+      background: var(--soft);
+      border: 1px solid var(--edge);
+    }
+    .warning-body p { margin: 0; font-size: 16px; line-height: 1.6; }
+    .warning-body b { color: var(--accent); font-size: 17px; }
+
+    .warning-extra {
+      margin: 14px 2px 0;
       color: var(--ink);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .warning-extra b { color: #b3261e; }
+
+    .warning-note {
+      margin: 14px 2px 18px;
+      color: #b3261e;
+      font-size: 14px;
+      line-height: 1.55;
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .ack-btn {
+      width: 100%;
+      min-height: 54px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--line);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .ack-btn:disabled {
+      background: #b9c6bd;
+      color: #eef2ee;
+      cursor: not-allowed;
     }
 
     @media (max-width: 560px) {
-      main {
-        padding-top: 20px;
-      }
-
-      .hero {
-        grid-template-columns: 96px minmax(0, 1fr);
-        align-items: center;
-        gap: 12px;
-      }
-
-      .avatar {
-        width: 96px;
-        height: 96px;
-        font-size: 21px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-
-      .course-head {
-        display: grid;
-      }
-
-      .badge {
-        width: fit-content;
-      }
+      main { padding-top: 20px; }
+      .hero { grid-template-columns: 96px minmax(0, 1fr); gap: 12px; }
+      .avatar { width: 96px; height: 96px; font-size: 21px; }
+      h1 { font-size: 24px; }
     }
   </style>
 </head>
@@ -276,12 +268,35 @@
         <span>課</span>
       </div>
       <div>
-        <h1>複習分享會 LINE 社群入口</h1>
-        <p class="intro">請選擇要加入的課程場次，點選按鈕即可開啟 LINE。</p>
+        <h1>三年級社群入口</h1>
+        <p class="intro">請選擇你報名的方案，系統會列出你要加入的社群。</p>
       </div>
     </header>
 
-    <section class="course-list" id="courseList" aria-label="課程社群列表"></section>
+    <!-- 警語關卡（第一關）-->
+    <section id="warningView" class="warning-view" aria-label="加入前須知">
+      <div class="warning-card">
+        <h2 class="warning-title">⚠️ 加入前請詳讀｜群內名稱格式</h2>
+        <div class="warning-body">
+          <p><strong>學生：</strong>名字 ＋ 手機末三碼<br>範例：<b>百宏313</b></p>
+          <p><strong>家長：</strong>某某媽／某某爸 ＋ 手機末三碼<br>範例：<b>百宏媽313</b>、<b>百宏爸313</b></p>
+        </div>
+        <p class="warning-extra">請務必選擇<b>正確的方案</b>，Paco 老師之後會一一核對，請大家配合，避免造成後續的困擾。</p>
+        <p class="warning-note">名稱未依規定者，管理員將直接移除，請務必配合 🙏</p>
+        <button class="ack-btn" id="ackBtn" type="button" disabled>請詳閱（5）</button>
+      </div>
+    </section>
+
+    <!-- 方案選擇 -->
+    <section id="planList" class="plan-list hidden" aria-label="報名方案"></section>
+
+    <!-- 加入社群 -->
+    <section id="joinView" class="join-view" aria-label="加入社群">
+      <button class="back" type="button" id="backBtn">← 重新選擇方案</button>
+      <div class="chosen" id="chosen"></div>
+      <div id="joinButtons"></div>
+      <div class="status" id="status" role="status" aria-live="polite"></div>
+    </section>
 
     <div class="support">
       如果無法加入，請洽詢官方 LINE：<strong>@498szsve</strong>
@@ -289,25 +304,38 @@
   </main>
 
   <script>
+    /* ===== 設定區（只需要改這裡）===== */
     const AVATAR_URL = "science-avatar.png";
-    const COURSES = [
-      {
-        title: "國一：生物三段複習分享會",
-        badge: "國一",
-        note: "適合要加入生物三段複習分享會的家長與學生。",
-        url: "https://line.me/ti/g2/4r6kB67iak396eUmVSig7JaxKXtdhz8Uh4PPFg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-      },
-      {
-        title: "國二：理化三段複習分享會",
-        badge: "國二",
-        note: "適合要加入理化三段複習分享會的家長與學生。",
-        url: "https://line.me/ti/g2/fA39gcNI-sDLhQg-yM8ajb1_kQvnNCb6K1DkCQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-      }
+
+    // 三個社群：名稱 + 邀請連結
+    const COMMUNITIES = {
+      jiushang: { name: "九上理化進度班", url: "https://line.me/ti/g2/14Fvx1xSUwvCSGRJheCOMlH_0TULY4QbPWCNBg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" },
+      bashang:  { name: "八上理化複習",   url: "https://line.me/ti/g2/sxmIFZPuqnpW3M9nRO0MnwOoPHfc8hGgK6nZgw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" },
+      shengwu:  { name: "生物複習",       url: "https://line.me/ti/g2/hnq1LD54W_yPd80CVviVrJRSQlrwFSZMmJQ1xA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" },
+    };
+
+    // 六個方案 A–F：包含哪幾個社群
+    const PLANS = [
+      { code: "A", communities: ["jiushang", "bashang", "shengwu"] },
+      { code: "B", communities: ["jiushang", "shengwu"] },
+      { code: "C", communities: ["jiushang", "bashang"] },
+      { code: "D", communities: ["bashang", "shengwu"] },
+      { code: "E", communities: ["shengwu"] },
+      { code: "F", communities: ["bashang"] },
     ];
+    /* ===== 設定區結束 ===== */
+
+    const planDesc = (plan) => plan.communities.map(k => COMMUNITIES[k].name).join(" + ");
 
     const avatar = document.querySelector("#avatar");
     const avatarImage = avatar.querySelector("img");
-    const courseList = document.querySelector("#courseList");
+    const warningView = document.querySelector("#warningView");
+    const ackBtn = document.querySelector("#ackBtn");
+    const planList = document.querySelector("#planList");
+    const joinView = document.querySelector("#joinView");
+    const joinButtons = document.querySelector("#joinButtons");
+    const chosen = document.querySelector("#chosen");
+    const statusEl = document.querySelector("#status");
 
     if (AVATAR_URL) {
       avatarImage.src = AVATAR_URL;
@@ -317,57 +345,98 @@
     function iconArrow() {
       return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     }
-
     function iconCopy() {
       return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="10" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
     }
 
-    function renderCourses() {
-      courseList.innerHTML = COURSES.map((course, index) => `
-        <article class="course">
-          <div class="course-head">
-            <div>
-              <h2 class="course-title">${course.title}</h2>
-              <p class="course-note">${course.note}</p>
-            </div>
-            <span class="badge">${course.badge}</span>
-          </div>
-          <a class="join" href="${course.url}" rel="noopener">
-            ${iconArrow()}
-            加入 LINE 社群
-          </a>
-          <div class="fallback">
-            <div class="fallback-text">
-              <span class="fallback-label">如果按鈕無法開啟，可複製此社群連結</span>
-              <span class="fallback-url">${course.url}</span>
-            </div>
-            <button class="copy-button" type="button" data-copy="${index}" aria-label="複製 ${course.title} 連結">
-              ${iconCopy()}
-            </button>
-          </div>
-          <div class="status" id="status-${index}" role="status" aria-live="polite"></div>
-        </article>
-      `).join("");
+    function renderPlans() {
+      planList.innerHTML =
+        '<p class="section-title">請選擇你的報名方案</p>' +
+        PLANS.map((plan, i) => `
+          <button class="plan" type="button" data-plan="${i}">
+            <span class="plan-code">${plan.code}</span>
+            <span class="plan-body">
+              <span class="plan-label">${plan.code} 方案</span>
+              <span class="plan-desc">${planDesc(plan)}</span>
+            </span>
+            <span class="plan-arrow">›</span>
+          </button>
+        `).join("");
     }
 
-    async function copyCourseUrl(index) {
-      const status = document.querySelector(`#status-${index}`);
-      const url = COURSES[index].url;
+    function showJoin(planIndex) {
+      const plan = PLANS[planIndex];
+      chosen.innerHTML = `你選擇的是 <strong>${plan.code} 方案</strong>：${planDesc(plan)}<br>請點擊下方按鈕加入社群 👇`;
+      joinButtons.innerHTML = plan.communities.map((key) => {
+        const c = COMMUNITIES[key];
+        return `
+          <a class="join" href="${c.url}" rel="noopener">
+            ${iconArrow()}<span class="join-name">加入「${c.name}」</span>
+          </a>
+          <div class="copy-line">
+            <button class="copy-button" type="button" data-copy="${key}">
+              ${iconCopy()} 複製連結
+            </button>
+          </div>`;
+      }).join("");
+      statusEl.textContent = "";
+      planList.classList.add("hidden");
+      joinView.classList.add("active");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
 
+    function backToPlans() {
+      joinView.classList.remove("active");
+      planList.classList.remove("hidden");
+      statusEl.textContent = "";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    async function copyUrl(key) {
       try {
-        await navigator.clipboard.writeText(url);
-        status.textContent = "已複製連結。";
-      } catch (error) {
-        status.textContent = "請長按下方連結並選擇複製。";
+        await navigator.clipboard.writeText(COMMUNITIES[key].url);
+        statusEl.textContent = `已複製「${COMMUNITIES[key].name}」的連結。`;
+      } catch (e) {
+        statusEl.textContent = "複製失敗，請直接點上方綠色按鈕加入。";
       }
     }
 
-    renderCourses();
+    // 倒數關卡：5 秒後才能按「我知道」
+    const COUNTDOWN_SECONDS = 5;
+    function startCountdown() {
+      let remaining = COUNTDOWN_SECONDS;
+      ackBtn.disabled = true;
+      ackBtn.textContent = `請詳閱（${remaining}）`;
+      const timer = setInterval(() => {
+        remaining -= 1;
+        if (remaining > 0) {
+          ackBtn.textContent = `請詳閱（${remaining}）`;
+        } else {
+          clearInterval(timer);
+          ackBtn.disabled = false;
+          ackBtn.textContent = "我知道了，選擇方案 ›";
+        }
+      }, 1000);
+    }
 
-    courseList.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-copy]");
-      if (!button) return;
-      copyCourseUrl(Number(button.dataset.copy));
+    ackBtn.addEventListener("click", () => {
+      if (ackBtn.disabled) return;
+      warningView.classList.add("hidden");
+      planList.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    renderPlans();
+    startCountdown();
+
+    planList.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-plan]");
+      if (btn) showJoin(Number(btn.dataset.plan));
+    });
+    document.querySelector("#backBtn").addEventListener("click", backToPlans);
+    joinButtons.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-copy]");
+      if (btn) copyUrl(btn.dataset.copy);
     });
   </script>
 </body>
