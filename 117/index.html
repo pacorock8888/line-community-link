@@ -1,0 +1,770 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>117｜paco理化 VIP 班級入口</title>
+  <meta name="description" content="117 paco理化 VIP 班級入口，提供社群、作業小考群、Google Classroom 與教學影片連結。">
+  <style>
+    :root {
+      color-scheme: light;
+      --line: #06c755;
+      --ink: #16201b;
+      --muted: #5d6a64;
+      --panel: #ffffff;
+      --soft: #f4f7f2;
+      --edge: #dbe6df;
+      --strong-edge: #b8d0c0;
+      --accent: #285c3d;
+      --blue: #2864b6;
+      --blue-soft: #eef5ff;
+      --gold: #a76a16;
+      --gold-soft: #fff7e8;
+      --danger: #b63d2f;
+      --danger-soft: #fff0ed;
+      --shadow: 0 12px 34px rgba(23, 33, 27, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
+      color: var(--ink);
+      background:
+        linear-gradient(180deg, #f8faf6 0%, #eef5f1 44%, #f8f9f5 100%);
+    }
+
+    body.modal-open {
+      overflow: hidden;
+    }
+
+    main {
+      width: min(100%, 820px);
+      margin: 0 auto;
+      padding: 28px 16px 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      padding: 16px 4px 22px;
+    }
+
+    .avatar {
+      width: 118px;
+      height: 118px;
+      display: grid;
+      place-items: center;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      background: linear-gradient(145deg, var(--accent), #397c51);
+      box-shadow: 0 10px 26px rgba(23, 33, 27, 0.14);
+      color: #fff;
+      font-size: 22px;
+      font-weight: 800;
+      overflow: hidden;
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 29px;
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+
+    .intro {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .notice {
+      margin-bottom: 16px;
+      padding: 14px 16px;
+      border: 1px solid #f0d59b;
+      border-left: 5px solid #e3a234;
+      border-radius: 8px;
+      background: var(--gold-soft);
+      color: #5f3d10;
+      line-height: 1.65;
+    }
+
+    .notice strong {
+      color: #2a1b08;
+    }
+
+    .link-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .resource {
+      padding: 18px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .resource-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .resource-title {
+      margin-bottom: 7px;
+      font-size: 20px;
+      line-height: 1.3;
+      letter-spacing: 0;
+    }
+
+    .resource-note {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .badge {
+      min-width: max-content;
+      padding: 5px 9px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--soft);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .badge.blue {
+      border-color: #bad0f0;
+      color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .badge.gold {
+      border-color: #efd39c;
+      color: var(--gold);
+      background: var(--gold-soft);
+    }
+
+    .action {
+      width: 100%;
+      min-height: 54px;
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 17px;
+      font-weight: 800;
+      text-decoration: none;
+      box-shadow: 0 12px 24px rgba(40, 92, 61, 0.2);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .action.line {
+      background: var(--line);
+      box-shadow: 0 12px 24px rgba(6, 199, 85, 0.22);
+    }
+
+    .action.blue {
+      background: var(--blue);
+      box-shadow: 0 12px 24px rgba(40, 100, 182, 0.2);
+    }
+
+    .action.gold {
+      background: var(--gold);
+      box-shadow: 0 12px 24px rgba(167, 106, 22, 0.18);
+    }
+
+    .action.secondary {
+      border: 1px solid var(--edge);
+      background: #fff;
+      color: var(--accent);
+      box-shadow: none;
+    }
+
+    .action:focus-visible,
+    .copy-button:focus-visible,
+    .modal-close:focus-visible {
+      outline: 3px solid rgba(6, 199, 85, 0.28);
+      outline-offset: 2px;
+    }
+
+    .action svg,
+    .copy-button svg,
+    .modal-close svg {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+    }
+
+    .helper {
+      margin-top: 12px;
+      padding: 12px 13px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .helper strong {
+      color: var(--ink);
+    }
+
+    .copy-row {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 8px;
+      align-items: stretch;
+      padding: 10px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: #f9fbf8;
+    }
+
+    .copy-text {
+      min-width: 0;
+      display: grid;
+      align-content: center;
+      gap: 3px;
+    }
+
+    .copy-label {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.3;
+    }
+
+    .copy-value {
+      overflow: hidden;
+      color: var(--ink);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      line-height: 1.35;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .copy-button {
+      min-width: 46px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 8px;
+      background: #eef5ef;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .status {
+      min-height: 20px;
+      margin: 10px 2px 0;
+      color: var(--accent);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .rules {
+      margin-top: 18px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .rule-box {
+      padding: 15px 16px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .rule-box.warning {
+      border-color: #f0c3ba;
+      background: var(--danger-soft);
+      color: #633027;
+    }
+
+    .rule-box h2 {
+      margin-bottom: 7px;
+      color: var(--ink);
+      font-size: 18px;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .rule-box p {
+      margin-bottom: 0;
+    }
+
+    .rule-box strong {
+      color: var(--ink);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 30;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(14, 22, 18, 0.58);
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal {
+      width: min(100%, 560px);
+      max-height: min(760px, calc(100vh - 36px));
+      overflow: auto;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24);
+    }
+
+    .modal-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding: 18px 18px 0;
+    }
+
+    .modal-title {
+      margin-bottom: 6px;
+      font-size: 22px;
+      line-height: 1.32;
+      letter-spacing: 0;
+    }
+
+    .modal-subtitle {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.58;
+    }
+
+    .modal-close {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 16px 18px 18px;
+    }
+
+    .modal-alert {
+      padding: 13px 14px;
+      border: 1px solid #f0d59b;
+      border-radius: 8px;
+      background: var(--gold-soft);
+      color: #5f3d10;
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .modal-alert strong {
+      color: #2a1b08;
+    }
+
+    .video-actions {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .video-actions .action {
+      min-height: 50px;
+      margin-top: 0;
+      font-size: 15px;
+    }
+
+    .countdown {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border: 1px solid var(--edge);
+      border-radius: 8px;
+      background: #f9fbf8;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .countdown strong {
+      color: var(--danger);
+      font-size: 20px;
+    }
+
+    .modal-primary {
+      width: 100%;
+      margin-top: 12px;
+    }
+
+    .modal-primary[aria-disabled="true"] {
+      opacity: 0.48;
+      pointer-events: none;
+    }
+
+    @media (max-width: 620px) {
+      main {
+        padding-top: 20px;
+      }
+
+      .hero {
+        grid-template-columns: 92px minmax(0, 1fr);
+        gap: 12px;
+      }
+
+      .avatar {
+        width: 92px;
+        height: 92px;
+      }
+
+      h1 {
+        font-size: 23px;
+      }
+
+      .intro {
+        font-size: 15px;
+      }
+
+      .resource-head {
+        grid-template-columns: 1fr;
+      }
+
+      .badge {
+        width: fit-content;
+      }
+
+      .video-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="hero">
+      <div class="avatar" aria-hidden="true">
+        <img src="../science-avatar.png" alt="">
+      </div>
+      <div>
+        <h1>117｜paco理化 VIP 班級入口</h1>
+        <p class="intro">已報名學生與家長請從這裡加入社群、Classroom，並先看完兩支操作教學影片。</p>
+      </div>
+    </header>
+
+    <section class="notice" aria-label="重要提醒">
+      <strong>請一定要先看教學影片。</strong>作業怎麼交、上課資源去哪裡找，都在影片裡。加入社群前也會再次跳出提醒與倒數。
+    </section>
+
+    <section class="link-list" id="linkList" aria-label="班級入口連結"></section>
+
+    <section class="rules" aria-label="加入規則">
+      <div class="rule-box">
+        <h2>社群名稱規則</h2>
+        <p>家長請使用「學生名字 + 媽/爸 + 報名手機末三碼」，例如 <strong>百宏媽313</strong>。學生請使用「學生名字 + 報名手機末三碼」，例如 <strong>百宏313</strong>。</p>
+      </div>
+
+      <div class="rule-box warning">
+        <h2>加入人數與密碼</h2>
+        <p>每位學生最多一位家長與一位學生加入。學生如果有手機管控，可以不用加入。社群密碼：<strong>rock1234</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal-backdrop" id="lineModal" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+      <div class="modal-top">
+        <div>
+          <h2 class="modal-title" id="modalTitle">加入社群前，請先看教學影片</h2>
+          <p class="modal-subtitle" id="modalDesc">很多問題影片裡已經有示範，請先看完再加入社群。</p>
+        </div>
+        <button class="modal-close" type="button" id="closeModal" aria-label="關閉提醒">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-alert">
+          <strong>請務必先看完兩支影片：</strong><br>
+          1. Google Classroom 作業繳交教學影片<br>
+          2. 資源統整操作教學影片
+        </div>
+
+        <div class="video-actions">
+          <a class="action blue" href="https://www.youtube.com/shorts/XhpVTYgaL1o" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m10 8 6 4-6 4V8Z" fill="currentColor"/>
+              <path d="M3 12c0-3.2.3-5 1.1-5.9C5 5.3 6.8 5 12 5s7 .3 7.9 1.1c.8.9 1.1 2.7 1.1 5.9s-.3 5-1.1 5.9C19 18.7 17.2 19 12 19s-7-.3-7.9-1.1C3.3 17 3 15.2 3 12Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            作業繳交影片
+          </a>
+          <a class="action gold" href="https://www.youtube.com/watch?v=eUQ9YtZFULQ" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m10 8 6 4-6 4V8Z" fill="currentColor"/>
+              <path d="M3 12c0-3.2.3-5 1.1-5.9C5 5.3 6.8 5 12 5s7 .3 7.9 1.1c.8.9 1.1 2.7 1.1 5.9s-.3 5-1.1 5.9C19 18.7 17.2 19 12 19s-7-.3-7.9-1.1C3.3 17 3 15.2 3 12Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            資源統整影片
+          </a>
+        </div>
+
+        <div class="countdown" id="countdownText" aria-live="polite">
+          請先閱讀提醒，<strong>5</strong> 秒後可前往社群。
+        </div>
+
+        <a class="action line modal-primary" id="modalGo" href="#" rel="noopener" aria-disabled="true">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          我知道了，前往 LINE 社群
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const LINKS = [
+      {
+        title: "加入 VIP 社群",
+        badge: "LINE",
+        badgeClass: "",
+        note: "117｜paco理化vip群。加入時請依照下方名稱規則填寫，社群密碼為 rock1234。",
+        url: "https://line.me/ti/g2/Y9O7qcHR6rGYTtIhC-1P-GECzbT3FZa5UWBJyw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+        actionLabel: "加入 VIP 社群",
+        actionClass: "line",
+        needsReminder: true,
+        helper: "這裡是課程主要通知與班級溝通社群。"
+      },
+      {
+        title: "加入作業小考群",
+        badge: "LINE",
+        badgeClass: "",
+        note: "117｜paco作業小考群。作業、小考與繳交相關提醒會放在這裡。",
+        url: "https://line.me/ti/g2/ZlS36EvL-BaR1IIbDiicl4HdFtZ8j8EmWeOIKQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
+        actionLabel: "加入作業小考群",
+        actionClass: "line",
+        needsReminder: true,
+        helper: "加入前請先看作業繳交教學影片，會比較不容易交錯位置。"
+      },
+      {
+        title: "加入 Google Classroom",
+        badge: "Classroom",
+        badgeClass: "blue",
+        note: "請使用「學生全名」的 Google 帳號加入。學校帳號可能有權限限制，請不要使用家長帳號。",
+        url: "https://classroom.google.com/c/ODY5MDE4NDAyOTI0?cjc=lkonhurz",
+        actionLabel: "前往 Google Classroom",
+        actionClass: "blue",
+        needsReminder: false,
+        helper: "如果沒有適合帳號，可以直接申請一個新的 Google 帳號，名稱請讓 paco 老師能辨識孩子。"
+      },
+      {
+        title: "作業繳交操作教學影片",
+        badge: "影片",
+        badgeClass: "gold",
+        note: "示範 Google Classroom 作業該如何上傳與繳交。",
+        url: "https://www.youtube.com/shorts/XhpVTYgaL1o",
+        actionLabel: "觀看作業繳交影片",
+        actionClass: "blue",
+        needsReminder: false,
+        helper: "請家長與學生都先看一次，後續作業繳交會省很多來回確認。"
+      },
+      {
+        title: "資源統整操作教學影片",
+        badge: "影片",
+        badgeClass: "gold",
+        note: "說明上課相關資源會放在哪裡，以及如何找到需要的資料。",
+        url: "https://www.youtube.com/watch?v=eUQ9YtZFULQ",
+        actionLabel: "觀看資源統整影片",
+        actionClass: "gold",
+        needsReminder: false,
+        helper: "課堂補充、複習資料與相關連結都會依照影片方式整理。"
+      }
+    ];
+
+    const linkList = document.querySelector("#linkList");
+    const lineModal = document.querySelector("#lineModal");
+    const closeModalButton = document.querySelector("#closeModal");
+    const countdownText = document.querySelector("#countdownText");
+    const modalGo = document.querySelector("#modalGo");
+    let countdownTimer = null;
+    let activeTrigger = null;
+
+    function iconArrow() {
+      return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+
+    function iconCopy() {
+      return '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="10" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+    }
+
+    function renderLinks() {
+      linkList.innerHTML = LINKS.map((item, index) => `
+        <article class="resource">
+          <div class="resource-head">
+            <div>
+              <h2 class="resource-title">${item.title}</h2>
+              <p class="resource-note">${item.note}</p>
+            </div>
+            <span class="badge ${item.badgeClass}">${item.badge}</span>
+          </div>
+          <a
+            class="action ${item.actionClass}"
+            href="${item.url}"
+            ${item.needsReminder ? `data-line-link="${index}"` : 'target="_blank"'}
+            rel="noopener"
+          >
+            ${iconArrow()}
+            ${item.actionLabel}
+          </a>
+          <div class="helper">${item.helper}</div>
+          <div class="copy-row">
+            <div class="copy-text">
+              <span class="copy-label">如果按鈕無法開啟，可複製此連結</span>
+              <span class="copy-value">${item.url}</span>
+            </div>
+            <button class="copy-button" type="button" data-copy="${index}" aria-label="複製 ${item.title} 連結">
+              ${iconCopy()}
+            </button>
+          </div>
+          <div class="status" id="status-${index}" role="status" aria-live="polite"></div>
+        </article>
+      `).join("");
+    }
+
+    async function copyUrl(index) {
+      const status = document.querySelector(`#status-${index}`);
+      const url = LINKS[index].url;
+
+      try {
+        await navigator.clipboard.writeText(url);
+        status.textContent = "已複製連結。";
+      } catch (error) {
+        status.textContent = "請長按連結並選擇複製。";
+      }
+    }
+
+    function openReminder(index, trigger) {
+      const item = LINKS[index];
+      let remaining = 5;
+      activeTrigger = trigger;
+      modalGo.href = item.url;
+      modalGo.setAttribute("aria-disabled", "true");
+      countdownText.innerHTML = `請先閱讀提醒，<strong>${remaining}</strong> 秒後可前往社群。`;
+      lineModal.classList.add("active");
+      lineModal.setAttribute("aria-hidden", "false");
+      document.body.classList.add("modal-open");
+      closeModalButton.focus();
+
+      clearInterval(countdownTimer);
+      countdownTimer = setInterval(() => {
+        remaining -= 1;
+        if (remaining <= 0) {
+          clearInterval(countdownTimer);
+          countdownTimer = null;
+          countdownText.innerHTML = "可以前往社群了。請記得先看完兩支教學影片。";
+          modalGo.setAttribute("aria-disabled", "false");
+          return;
+        }
+
+        countdownText.innerHTML = `請先閱讀提醒，<strong>${remaining}</strong> 秒後可前往社群。`;
+      }, 1000);
+    }
+
+    function closeReminder() {
+      clearInterval(countdownTimer);
+      countdownTimer = null;
+      lineModal.classList.remove("active");
+      lineModal.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("modal-open");
+      modalGo.href = "#";
+      modalGo.setAttribute("aria-disabled", "true");
+
+      if (activeTrigger) {
+        activeTrigger.focus();
+        activeTrigger = null;
+      }
+    }
+
+    renderLinks();
+
+    linkList.addEventListener("click", (event) => {
+      const copyButton = event.target.closest("[data-copy]");
+      if (copyButton) {
+        copyUrl(Number(copyButton.dataset.copy));
+        return;
+      }
+
+      const lineLink = event.target.closest("[data-line-link]");
+      if (!lineLink) return;
+      event.preventDefault();
+      openReminder(Number(lineLink.dataset.lineLink), lineLink);
+    });
+
+    closeModalButton.addEventListener("click", closeReminder);
+
+    lineModal.addEventListener("click", (event) => {
+      if (event.target === lineModal) {
+        closeReminder();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && lineModal.classList.contains("active")) {
+        closeReminder();
+      }
+    });
+  </script>
+</body>
+</html>
