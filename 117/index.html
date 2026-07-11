@@ -414,6 +414,21 @@
       color: #2a1b08;
     }
 
+    .modal-name-rule {
+      margin-bottom: 12px;
+      padding: 13px 14px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 8px;
+      background: var(--soft);
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.62;
+    }
+
+    .modal-name-rule strong {
+      color: var(--ink);
+    }
+
     .video-actions {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -531,8 +546,8 @@
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
       <div class="modal-top">
         <div>
-          <h2 class="modal-title" id="modalTitle">加入社群前，請先看教學影片</h2>
-          <p class="modal-subtitle" id="modalDesc">很多問題影片裡已經有示範，請先看完再加入社群。</p>
+          <h2 class="modal-title" id="modalTitle">加入社群前，請先確認名稱格式</h2>
+          <p class="modal-subtitle" id="modalDesc">名稱格式正確，paco 老師才認得出是哪位學生與家長。</p>
         </div>
         <button class="modal-close" type="button" id="closeModal" aria-label="關閉提醒">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -542,6 +557,12 @@
       </div>
 
       <div class="modal-body">
+        <div class="modal-name-rule">
+          <strong>加入 LINE 社群請使用指定名稱：</strong><br>
+          家長：學生名字 + 媽/爸 + 報名手機末三碼，例如 <strong>百宏媽313</strong><br>
+          學生：學生名字 + 報名手機末三碼，例如 <strong>百宏313</strong>
+        </div>
+
         <div class="modal-alert">
           <strong>請務必先看完兩支影片：</strong><br>
           1. Google Classroom 作業繳交教學影片<br>
@@ -566,14 +587,14 @@
         </div>
 
         <div class="countdown" id="countdownText" aria-live="polite">
-          請先閱讀提醒，<strong>5</strong> 秒後可前往社群。
+          請先閱讀提醒，<strong>10</strong> 秒後可前往社群。
         </div>
 
         <a class="action line modal-primary" id="modalGo" href="#" rel="noopener" aria-disabled="true">
           <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
-          我知道了，前往 LINE 社群
+          我已確認名稱格式，前往 LINE 社群
         </a>
       </div>
     </section>
@@ -590,7 +611,7 @@
         actionLabel: "加入 VIP 社群",
         actionClass: "line",
         needsReminder: true,
-        helper: "這裡是課程主要通知與班級溝通社群。"
+        helper: "這裡是課程主要通知與班級溝通社群。加入前請先確認 LINE 名稱已改成指定格式。"
       },
       {
         title: "加入作業小考群",
@@ -601,7 +622,7 @@
         actionLabel: "加入作業小考群",
         actionClass: "line",
         needsReminder: true,
-        helper: "加入前請先看作業繳交教學影片，會比較不容易交錯位置。"
+        helper: "加入前請先確認 LINE 名稱已改成指定格式，並看完作業繳交教學影片。"
       },
       {
         title: "加入 Google Classroom",
@@ -702,7 +723,7 @@
 
     function openReminder(index, trigger) {
       const item = LINKS[index];
-      let remaining = 5;
+      let remaining = 10;
       activeTrigger = trigger;
       modalGo.href = item.url;
       modalGo.setAttribute("aria-disabled", "true");
@@ -718,7 +739,7 @@
         if (remaining <= 0) {
           clearInterval(countdownTimer);
           countdownTimer = null;
-          countdownText.innerHTML = "可以前往社群了。請記得先看完兩支教學影片。";
+          countdownText.innerHTML = "可以前往社群了。請確認名稱格式正確，並記得看完兩支教學影片。";
           modalGo.setAttribute("aria-disabled", "false");
           return;
         }
