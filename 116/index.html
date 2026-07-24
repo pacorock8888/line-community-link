@@ -10,20 +10,20 @@
     :root {
       color-scheme: light;
       --line: #06c755;
-      --ink: #16201b;
-      --muted: #5d6a64;
+      --ink: #14252b;
+      --muted: #5b6d73;
       --panel: #ffffff;
-      --soft: #f4f7f2;
-      --edge: #dbe6df;
-      --strong-edge: #b8d0c0;
-      --accent: #285c3d;
-      --blue: #2864b6;
-      --blue-soft: #eef5ff;
-      --gold: #a76a16;
+      --soft: #eef8f8;
+      --edge: #d3e8ea;
+      --strong-edge: #9dc7ce;
+      --accent: #1f6f78;
+      --blue: #2a65a8;
+      --blue-soft: #edf6ff;
+      --gold: #946d19;
       --gold-soft: #fff7e8;
       --danger: #b63d2f;
       --danger-soft: #fff0ed;
-      --shadow: 0 12px 34px rgba(23, 33, 27, 0.1);
+      --shadow: 0 12px 34px rgba(18, 48, 55, 0.1);
     }
 
     * {
@@ -36,7 +36,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
       color: var(--ink);
       background:
-        linear-gradient(180deg, #f8faf6 0%, #eef5f1 44%, #f8f9f5 100%);
+        linear-gradient(180deg, #f6fbfc 0%, #eaf6f7 44%, #f8fbfa 100%);
     }
 
     body.modal-open {
@@ -64,8 +64,8 @@
       place-items: center;
       border: 2px solid #fff;
       border-radius: 8px;
-      background: linear-gradient(145deg, var(--accent), #397c51);
-      box-shadow: 0 10px 26px rgba(23, 33, 27, 0.14);
+      background: linear-gradient(145deg, var(--accent), #2e9a96);
+      box-shadow: 0 10px 26px rgba(18, 48, 55, 0.14);
       color: #fff;
       font-size: 22px;
       font-weight: 800;
@@ -98,6 +98,20 @@
       color: var(--muted);
       font-size: 16px;
       line-height: 1.6;
+    }
+
+    .class-tag {
+      width: fit-content;
+      max-width: 100%;
+      margin: 10px 0 0;
+      padding: 6px 10px;
+      border: 1px solid var(--strong-edge);
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--accent);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.35;
     }
 
     .notice {
@@ -515,6 +529,7 @@
       <div>
         <h1>116｜九年級 paco理化班級入口</h1>
         <p class="intro">已報名學生與家長請從這裡加入社群、Classroom，並先看完兩支操作教學影片。</p>
+        <p class="class-tag">目前入口：116 九年級 paco理化</p>
       </div>
     </header>
 
