@@ -855,13 +855,13 @@
           <span class="progress-dot">1</span>
           <span>帳號名稱</span>
         </div>
-        <div class="progress-item" data-progress="classroomVideo">
-          <span class="progress-dot">2</span>
-          <span>Classroom 影片</span>
-        </div>
         <div class="progress-item" data-progress="classroom">
-          <span class="progress-dot">3</span>
+          <span class="progress-dot">2</span>
           <span>加入 Classroom</span>
+        </div>
+        <div class="progress-item" data-progress="classroomVideo">
+          <span class="progress-dot">3</span>
+          <span>Classroom 影片</span>
         </div>
         <div class="progress-item" data-progress="resourceVideo">
           <span class="progress-dot">4</span>
@@ -912,39 +912,9 @@
         </div>
       </article>
 
-      <article class="flow-step locked" data-step="classroomVideo">
-        <div class="step-head">
-          <span class="step-number">2</span>
-          <div>
-            <h2 class="step-title">觀看 Classroom／作業繳交教學影片</h2>
-            <p class="step-note">這支影片綁定 Classroom 流程，請先看完，再加入 Google Classroom。</p>
-          </div>
-          <span class="step-status" data-step-status="classroomVideo">未開放</span>
-        </div>
-
-        <p class="locked-note">請先完成第 1 步：確認 Google 帳號名稱。</p>
-
-        <div class="step-actions">
-          <a class="action blue" href="https://www.youtube.com/shorts/XhpVTYgaL1o" target="_blank" rel="noopener" data-video-link="classroomVideo" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m10 8 6 4-6 4V8Z" fill="currentColor"/>
-              <path d="M3 12c0-3.2.3-5 1.1-5.9C5 5.3 6.8 5 12 5s7 .3 7.9 1.1c.8.9 1.1 2.7 1.1 5.9s-.3 5-1.1 5.9C19 18.7 17.2 19 12 19s-7-.3-7.9-1.1C3.3 17 3 15.2 3 12Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            觀看 Classroom 影片
-          </a>
-          <button class="action button-action secondary" type="button" id="classroomVideoDone" disabled>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            我已看完影片
-          </button>
-        </div>
-        <p class="gate-status" id="classroomVideoStatus">完成第 1 步後，請先點開影片觀看。</p>
-      </article>
-
       <article class="flow-step locked" data-step="classroom">
         <div class="step-head">
-          <span class="step-number">3</span>
+          <span class="step-number">2</span>
           <div>
             <h2 class="step-title">加入 Google Classroom</h2>
             <p class="step-note">請使用剛剛確認好的學生姓名 Google 帳號加入 Classroom。</p>
@@ -952,7 +922,7 @@
           <span class="step-status" data-step-status="classroom">未開放</span>
         </div>
 
-        <p class="locked-note">請先完成第 2 步：看完 Classroom／作業繳交教學影片。</p>
+        <p class="locked-note">請先完成第 1 步：確認 Google 帳號名稱。</p>
 
         <div class="step-actions">
           <a class="action blue" href="https://classroom.google.com/c/Nzg4MzUzMjk1Nzg1?cjc=4232uogp" target="_blank" rel="noopener" id="classroomLink" aria-disabled="true">
@@ -971,6 +941,36 @@
         <p class="gate-status" id="classroomStatus">請先點開 Classroom，加入完成後回到此頁確認。</p>
       </article>
 
+      <article class="flow-step locked" data-step="classroomVideo">
+        <div class="step-head">
+          <span class="step-number">3</span>
+          <div>
+            <h2 class="step-title">觀看 Classroom／作業繳交教學影片</h2>
+            <p class="step-note">加入 Classroom 後，請看這支影片，了解作業要怎麼上傳與繳交。</p>
+          </div>
+          <span class="step-status" data-step-status="classroomVideo">未開放</span>
+        </div>
+
+        <p class="locked-note">請先完成第 2 步：加入 Google Classroom。</p>
+
+        <div class="step-actions">
+          <a class="action blue" href="https://www.youtube.com/shorts/XhpVTYgaL1o" target="_blank" rel="noopener" data-video-link="classroomVideo" aria-disabled="true">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m10 8 6 4-6 4V8Z" fill="currentColor"/>
+              <path d="M3 12c0-3.2.3-5 1.1-5.9C5 5.3 6.8 5 12 5s7 .3 7.9 1.1c.8.9 1.1 2.7 1.1 5.9s-.3 5-1.1 5.9C19 18.7 17.2 19 12 19s-7-.3-7.9-1.1C3.3 17 3 15.2 3 12Z" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            觀看 Classroom 影片
+          </a>
+          <button class="action button-action secondary" type="button" id="classroomVideoDone" disabled>
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            我已看完影片
+          </button>
+        </div>
+        <p class="gate-status" id="classroomVideoStatus">完成第 2 步後，請先點開影片觀看。</p>
+      </article>
+
       <article class="flow-step locked" data-step="resourceVideo">
         <div class="step-head">
           <span class="step-number">4</span>
@@ -981,7 +981,7 @@
           <span class="step-status" data-step-status="resourceVideo">未開放</span>
         </div>
 
-        <p class="locked-note">請先完成第 3 步：加入 Google Classroom。</p>
+        <p class="locked-note">請先完成第 3 步：看完 Classroom／作業繳交教學影片。</p>
 
         <div class="step-actions">
           <a class="action gold" href="https://www.youtube.com/watch?v=eUQ9YtZFULQ" target="_blank" rel="noopener" data-video-link="resourceVideo" aria-disabled="true">
@@ -1099,7 +1099,7 @@
   </div>
 
   <script>
-    const STORAGE_KEY = "paco-116-flow-v1";
+    const STORAGE_KEY = "paco-116-flow-v2";
     const VIDEO_WAIT_SECONDS = 10;
     const LINE_WAIT_SECONDS = 10;
     const LINE_LINKS = {
@@ -1107,7 +1107,7 @@
       homework: "https://line.me/ti/g2/ZGVT-8ibyTKYj9tkcSHNAK0l5bIPZeeJdHrHRQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
     };
 
-    const STEP_ORDER = ["account", "classroomVideo", "classroom", "resourceVideo", "line"];
+    const STEP_ORDER = ["account", "classroom", "classroomVideo", "resourceVideo", "line"];
     const STEP_LABELS = {
       account: "確認 Google 帳號名稱",
       classroomVideo: "觀看 Classroom／作業繳交教學影片",
@@ -1170,15 +1170,15 @@
       if (step === "classroomVideo") return flowState.classroomVideoDone;
       if (step === "classroom") return flowState.classroomDone;
       if (step === "resourceVideo") return flowState.resourceVideoDone;
-      if (step === "line") return flowState.resourceVideoDone;
+      if (step === "line") return false;
       return false;
     }
 
     function isStepUnlocked(step) {
       if (step === "account") return true;
-      if (step === "classroomVideo") return flowState.accountDone;
-      if (step === "classroom") return flowState.classroomVideoDone;
-      if (step === "resourceVideo") return flowState.classroomDone;
+      if (step === "classroom") return flowState.accountDone;
+      if (step === "classroomVideo") return flowState.classroomDone;
+      if (step === "resourceVideo") return flowState.classroomVideoDone;
       if (step === "line") return flowState.resourceVideoDone;
       return false;
     }
@@ -1225,8 +1225,8 @@
     function getProgressText(step) {
       if (flowState.resourceVideoDone) return "Classroom 流程與資源統整影片已完成，可以加入 LINE 社群。";
       if (step === "account") return "目前請先確認 Google 帳號名稱是學生本人名字，不是家長名字，也不是學校帳號。";
-      if (step === "classroomVideo") return "下一步請先觀看 Classroom／作業繳交教學影片。";
       if (step === "classroom") return "請使用學生姓名 Google 帳號加入 Google Classroom。";
+      if (step === "classroomVideo") return "請觀看 Classroom／作業繳交教學影片，了解作業如何上傳與繳交。";
       if (step === "resourceVideo") return "請觀看資源統整使用教學影片，完成後才會開放 LINE 社群。";
       return "請依序完成所有步驟。";
     }
