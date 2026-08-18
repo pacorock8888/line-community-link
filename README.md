@@ -1,6 +1,6 @@
 # LINE 社群入口頁紀錄
 
-更新時間：2026-07-24
+更新時間：2026-08-18
 
 ## 公開入口連結總覽
 
@@ -44,23 +44,25 @@ https://pacorock8888.github.io/line-community-link/116/
 
 ### 入口內容
 
-1. 加入班級社群
-   - LINE 社群名稱：116｜九年級 paco理化群
-   - LINE 社群連結：https://line.me/ti/g2/14Fvx1xSUwvCSGRJheCOMlH_0TULY4QbPWCNBg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
+1. 確認 Google 帳號名稱
+   - 圖片教學檔案：`116/google-account-name-guide.png`
+   - 提醒：一定要用學生本人的 Google 帳號，名稱必須是學生姓名。不可使用家長帳號，不可使用學校帳號。
 
-2. 加入作業小考群
-   - LINE 社群名稱：116作業小考群
-   - LINE 社群連結：https://line.me/ti/g2/ZGVT-8ibyTKYj9tkcSHNAK0l5bIPZeeJdHrHRQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
+2. 觀看 Classroom／作業繳交教學影片
+   - 影片連結：https://www.youtube.com/shorts/XhpVTYgaL1o
 
 3. 加入 Google Classroom
    - Classroom 連結：https://classroom.google.com/c/Nzg4MzUzMjk1Nzg1?cjc=4232uogp
    - 提醒：請使用「學生全名」的 Google 帳號，學校帳號可能有權限限制，請不要使用家長帳號。
 
-4. 作業繳交操作教學影片
-   - 影片連結：https://www.youtube.com/shorts/XhpVTYgaL1o
-
-5. 資源統整操作教學影片
+4. 觀看資源統整使用教學影片
    - 影片連結：https://www.youtube.com/watch?v=eUQ9YtZFULQ
+
+5. 加入班級社群與作業小考群
+   - LINE 社群名稱：116｜九年級 paco理化群
+   - LINE 社群連結：https://line.me/ti/g2/14Fvx1xSUwvCSGRJheCOMlH_0TULY4QbPWCNBg?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
+   - LINE 社群名稱：116作業小考群
+   - LINE 社群連結：https://line.me/ti/g2/ZGVT-8ibyTKYj9tkcSHNAK0l5bIPZeeJdHrHRQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
 
 ### 116 加入規則
 
@@ -72,11 +74,14 @@ https://pacorock8888.github.io/line-community-link/116/
 
 ### 116 頁面機制
 
-- 頁面最上方先顯示社群名稱規則、加入人數與社群密碼。
-- 點擊兩個 LINE 社群按鈕時，會先跳出提醒視窗。
-- 提醒視窗會再次顯示家長與學生的社群名稱格式。
-- 提醒視窗會提醒家長與學生務必先看完兩支教學影片。
-- 倒數 10 秒後，才會開放「我已確認名稱格式，前往 LINE 社群」按鈕。
+- 頁面採逐步解鎖流程，前一步沒有完成，下一步按鈕會鎖住。
+- 第 1 步先確認 Google 帳號名稱：必須是學生本人名字，不可以是家長名字，不可以使用學校帳號。
+- 第 2 步觀看 Classroom／作業繳交教學影片，點開影片後需要等待 10 秒，才可按「我已看完影片」。
+- 第 3 步加入 Google Classroom，必須點開 Classroom 連結並確認已加入，才可解鎖下一步。
+- 第 4 步觀看資源統整使用教學影片，點開影片後需要等待 10 秒，才可按「我已看完影片」。
+- 第 5 步才會解鎖兩個 LINE 社群按鈕。
+- 點擊兩個 LINE 社群按鈕時，會先跳出提醒視窗，再次顯示家長與學生的 LINE 社群名稱格式。
+- LINE 提醒視窗倒數 10 秒後，才會開放「我已確認名稱格式，前往 LINE 社群」按鈕。
 
 ### 116 私訊建議文字
 
@@ -84,7 +89,7 @@ https://pacorock8888.github.io/line-community-link/116/
 
 https://pacorock8888.github.io/line-community-link/116/
 
-請先看頁面最上方的社群名稱規則、加入人數與密碼，再依序加入 LINE 社群、作業小考群與 Google Classroom。
+請依照頁面上的步驟操作：先確認 Google 帳號是學生本人姓名，不能用家長帳號，也不能用學校帳號。接著看 Classroom／作業繳交影片，加入 Google Classroom，再看資源統整使用教學影片，最後才會開放 LINE 社群。
 
 加入 LINE 社群時，請務必先把名稱改成指定格式：
 
