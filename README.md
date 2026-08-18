@@ -109,23 +109,25 @@ https://pacorock8888.github.io/line-community-link/117/
 
 ### 入口內容
 
-1. 加入 VIP 社群
-   - LINE 社群名稱：117｜paco理化vip群
-   - LINE 社群連結：https://line.me/ti/g2/Y9O7qcHR6rGYTtIhC-1P-GECzbT3FZa5UWBJyw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
+1. 確認 Google 帳號名稱
+   - 圖片教學檔案：`117/google-account-name-guide.png`
+   - 提醒：一定要用學生本人的 Google 帳號，名稱必須是學生姓名。不可使用家長帳號，不可使用學校帳號。
 
-2. 加入作業小考群
-   - LINE 社群名稱：117｜paco作業小考群
-   - LINE 社群連結：https://line.me/ti/g2/ZlS36EvL-BaR1IIbDiicl4HdFtZ8j8EmWeOIKQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
-
-3. 加入 Google Classroom
+2. 加入 Google Classroom
    - Classroom 連結：https://classroom.google.com/c/ODY5MDE4NDAyOTI0?cjc=lkonhurz
    - 提醒：請使用「學生全名」的 Google 帳號，學校帳號可能有權限限制，請不要使用家長帳號。
 
-4. 作業繳交操作教學影片
+3. 觀看 Classroom／作業繳交教學影片
    - 影片連結：https://www.youtube.com/shorts/XhpVTYgaL1o
 
-5. 資源統整操作教學影片
+4. 觀看資源統整使用教學影片
    - 影片連結：https://www.youtube.com/watch?v=eUQ9YtZFULQ
+
+5. 加入 VIP 社群與作業小考群
+   - LINE 社群名稱：117｜paco理化vip群
+   - LINE 社群連結：https://line.me/ti/g2/Y9O7qcHR6rGYTtIhC-1P-GECzbT3FZa5UWBJyw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
+   - LINE 社群名稱：117｜paco作業小考群
+   - LINE 社群連結：https://line.me/ti/g2/ZlS36EvL-BaR1IIbDiicl4HdFtZ8j8EmWeOIKQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default
 
 ### 117 加入規則
 
@@ -137,11 +139,14 @@ https://pacorock8888.github.io/line-community-link/117/
 
 ### 117 頁面機制
 
-- 頁面最上方先顯示社群名稱規則、加入人數與社群密碼。
-- 點擊兩個 LINE 社群按鈕時，會先跳出提醒視窗。
-- 提醒視窗會再次顯示家長與學生的社群名稱格式。
-- 提醒視窗會提醒家長與學生務必先看完兩支教學影片。
-- 倒數 10 秒後，才會開放「我已確認名稱格式，前往 LINE 社群」按鈕。
+- 頁面採逐步解鎖流程，前一步沒有完成，下一步按鈕會鎖住。
+- 第 1 步先確認 Google 帳號名稱：必須是學生本人名字，不可以是家長名字，不可以使用學校帳號。
+- 第 2 步加入 Google Classroom，必須點開 Classroom 連結並確認已加入，才可解鎖下一步。
+- 第 3 步觀看 Classroom／作業繳交教學影片，點開影片後需要等待 10 秒，才可按「我已看完影片」。
+- 第 4 步觀看資源統整使用教學影片，點開影片後需要等待 10 秒，才可按「我已看完影片」。
+- 第 5 步才會解鎖兩個 LINE 社群按鈕。
+- 點擊兩個 LINE 社群按鈕時，會先跳出提醒視窗，再次顯示家長與學生的 LINE 社群名稱格式。
+- LINE 提醒視窗倒數 10 秒後，才會開放「我已確認名稱格式，前往 LINE 社群」按鈕。
 
 ### 117 私訊建議文字
 
@@ -149,7 +154,7 @@ https://pacorock8888.github.io/line-community-link/117/
 
 https://pacorock8888.github.io/line-community-link/117/
 
-請先看頁面最上方的社群名稱規則、加入人數與密碼，再依序加入 LINE 社群、作業小考群與 Google Classroom。
+請依照頁面上的步驟操作：先確認 Google 帳號是學生本人姓名，不能用家長帳號，也不能用學校帳號。接著加入 Google Classroom，再看 Classroom／作業繳交影片，然後看資源統整使用教學影片，最後才會開放 LINE 社群。
 
 加入 LINE 社群時，請務必先把名稱改成指定格式：
 
