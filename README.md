@@ -6,8 +6,9 @@
 
 - 複習分享會入口：https://pacorock8888.github.io/line-community-link/
 - 116 班級入口：https://pacorock8888.github.io/line-community-link/116/
-- 116｜1234 補做入口：https://pacorock8888.github.io/line-community-link/116/1234/
+- 116｜Classroom 與資源補給站：https://pacorock8888.github.io/line-community-link/116/1234/
 - 117 班級入口：https://pacorock8888.github.io/line-community-link/117/
+- 117｜Classroom 與資源補給站：https://pacorock8888.github.io/line-community-link/117/1234/
 
 ## 複習分享會入口
 
@@ -100,7 +101,7 @@ https://pacorock8888.github.io/line-community-link/116/
 
 也請務必觀看頁面中的兩支教學影片，了解作業如何繳交，以及上課資源會放在哪裡。
 
-## 116｜1234 補做入口
+## 116｜Classroom 與資源補給站
 
 這個頁面是提供給已經加入 116 社群，但還沒完成 Google 帳號名稱、Google Classroom、作業繳交或資源統整確認的學生與家長使用。頁面不會強制解鎖，所有連結都可以直接點，方便在社群後台回覆狀況外的家長或學生。
 
@@ -128,17 +129,17 @@ https://pacorock8888.github.io/line-community-link/116/1234/
    - 資源統整內容：懶人包、作業解析、小考與小考解析、補充資料。
    - 小考提醒：小考考卷都需要自行列印出來作答。
 
-### 116｜1234 頁面機制
+### 116｜Classroom 與資源補給站頁面機制
 
-- 這是補做入口，不是 LINE 社群加入入口。
+- 這是 Classroom 與資源補給站，不是 LINE 社群加入入口。
 - 頁面不強制逐步解鎖，所有連結都可以直接點。
 - 頁面不放 LINE 社群連結，避免與正式加入流程混淆。
 - 作業上傳規定會明確提醒：若敷衍、沒有訂正、沒有作答過程，會被退件。
 - 資源統整區會明確列出：懶人包、作業解析、小考與小考解析、補充資料。
 
-### 116｜1234 私訊建議文字
+### 116｜Classroom 與資源補給站私訊建議文字
 
-您好，這是 116 的 Classroom 與資源補做入口：
+您好，這是 116 的 Classroom 與資源補給站：
 
 https://pacorock8888.github.io/line-community-link/116/1234/
 
@@ -213,11 +214,60 @@ https://pacorock8888.github.io/line-community-link/117/
 
 也請務必觀看頁面中的兩支教學影片，了解作業如何繳交，以及上課資源會放在哪裡。
 
+## 117｜Classroom 與資源補給站
+
+這個頁面是提供給已經加入 117 社群，但還沒完成 Google 帳號名稱、Google Classroom、作業繳交或資源統整確認的學生與家長使用。頁面不會強制解鎖，所有連結都可以直接點，方便在社群後台回覆狀況外的家長或學生。
+
+公開入口連結：
+
+https://pacorock8888.github.io/line-community-link/117/1234/
+
+### 入口內容
+
+1. 確認 Google 帳號名稱
+   - 圖片教學檔案：`117/google-account-name-guide.png`
+   - 提醒：一定要用學生本人的 Google 帳號，名稱必須是學生姓名。不可使用家長帳號，不可使用學校帳號。
+
+2. 117 Google Classroom 加入連結
+   - Classroom 連結：https://classroom.google.com/c/ODY5MDE4NDAyOTI0?cjc=lkonhurz
+   - 提醒：請使用「學生全名」的 Google 帳號加入。
+
+3. Google Classroom 作業上傳／繳交教學影片
+   - 影片連結：https://www.youtube.com/shorts/XhpVTYgaL1o
+   - 上傳規定：必須先自行訂正、務必附上完整作答過程、錯誤處請把解析內容寫上去。
+   - 退件提醒：不可以只拍答案、空白亂交，或看起來只是應付。內容敷衍、缺少訂正或缺少作答過程，會被退件。
+
+4. 上課資源統整使用教學影片
+   - 影片連結：https://www.youtube.com/watch?v=eUQ9YtZFULQ
+   - 資源統整內容：懶人包、作業解析、小考與小考解析、補充資料。
+   - 小考提醒：小考考卷都需要自行列印出來作答。
+
+### 117｜Classroom 與資源補給站頁面機制
+
+- 這是 Classroom 與資源補給站，不是 LINE 社群加入入口。
+- 頁面不強制逐步解鎖，所有連結都可以直接點。
+- 頁面不放 LINE 社群連結，避免與正式加入流程混淆。
+- 作業上傳規定會明確提醒：若敷衍、沒有訂正、沒有作答過程，會被退件。
+- 資源統整區會明確列出：懶人包、作業解析、小考與小考解析、補充資料。
+
+### 117｜Classroom 與資源補給站私訊建議文字
+
+您好，這是 117 的 Classroom 與資源補給站：
+
+https://pacorock8888.github.io/line-community-link/117/1234/
+
+請依照頁面內容把缺的項目補完。Google 帳號請務必使用學生本人姓名，不可以用家長帳號，也不可以用學校帳號。
+
+作業繳交前請先看影片。Google Classroom 作業上傳時，必須先自行訂正，並附上完整作答過程；如果有錯誤，請把解析內容寫上去。若內容敷衍、缺少訂正或缺少作答過程，會被退件。
+
+資源統整裡會放懶人包、作業解析、小考與小考解析、補充資料。小考考卷需要自行列印出來作答。
+
 ## 注意事項
 
 - 對外私訊時建議貼公開入口連結，不要直接貼 LINE 社群原始連結。
 - 如果之後場次名稱或 LINE 社群連結改變，需要同步修改 `index.html` 並重新發布到 GitHub Pages。
 - 如果之後 116 班級入口的社群連結、Classroom、影片、名稱規則或密碼改變，需要同步修改 `116/index.html` 並重新發布到 GitHub Pages。
-- 如果之後 116｜1234 補做入口的 Classroom、影片、作業規定或資源說明改變，需要同步修改 `116/1234/index.html` 並重新發布到 GitHub Pages。
+- 如果之後 116｜Classroom 與資源補給站的 Classroom、影片、作業規定或資源說明改變，需要同步修改 `116/1234/index.html` 並重新發布到 GitHub Pages。
 - 如果之後 117 班級入口的社群連結、Classroom、影片、名稱規則或密碼改變，需要同步修改 `117/index.html` 並重新發布到 GitHub Pages。
+- 如果之後 117｜Classroom 與資源補給站的 Classroom、影片、作業規定或資源說明改變，需要同步修改 `117/1234/index.html` 並重新發布到 GitHub Pages。
 - 家長若看到舊頁面，可請對方重新整理頁面。
