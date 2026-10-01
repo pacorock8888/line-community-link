@@ -1,46 +1,63 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
-  <title>國二社群複習入口</title>
-  <meta name="description" content="國二社群複習入口，點選連結加入 LINE 社群。">
-  <style>
-    :root { color-scheme: light; }
-    * { box-sizing: border-box; }
-    body { margin: 0; min-height: 100vh; background: #f8f7f2; color: #203d32; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif; }
-    main { width: min(100%, 760px); margin: 0 auto; padding: 40px 20px; }
-    .hero { display: flex; align-items: center; gap: 24px; padding: 8px 4px 30px; }
-    .avatar { width: 132px; height: 132px; flex: 0 0 auto; object-fit: cover; border: 3px solid #fff; border-radius: 12px; box-shadow: 0 10px 26px #203d321a; }
-    h1 { margin: 0; font-size: 30px; line-height: 1.4; letter-spacing: .02em; }
-    .join-panel { padding: 26px; background: #fff; border: 1px solid #d6e2d6; border-radius: 14px; box-shadow: 0 8px 24px #203d3208; }
-    .join { display: flex; align-items: center; justify-content: center; min-height: 64px; padding: 18px 20px; border-radius: 9px; background: #087f46; color: #fff; font-size: 20px; font-weight: 700; text-align: center; text-decoration: none; line-height: 1.5; }
-    .join:hover { background: #066b3b; }
-    .join:focus-visible { outline: 3px solid #203d32; outline-offset: 5px; }
-    .help { margin: 22px 0 0; padding: 18px 20px; border-left: 4px solid #79a780; background: #eef2e9; color: #5b6e60; font-size: 16px; line-height: 1.8; }
-    .help strong { color: #203d32; white-space: nowrap; }
-    @media (max-width: 480px) {
-      main { padding: 28px 18px; }
-      .hero { gap: 16px; padding-bottom: 24px; }
-      .avatar { width: 88px; height: 88px; }
-      h1 { font-size: 24px; }
-      .join-panel { padding: 18px; }
-      .join { font-size: 18px; }
-      .help { padding: 15px 16px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>加入 LINE 社群</title>
+<style>
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #f8f7f2; color: #203d32; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif; }
+main { width: min(100%, 480px); margin: 0 auto; padding: 56px 24px; }
+a, button { display: flex; justify-content: center; align-items: center; width: 100%; min-height: 64px; padding: 18px; border-radius: 10px; font: inherit; font-size: 20px; font-weight: 700; text-align: center; text-decoration: none; cursor: pointer; }
+a { color: #fff; background: #087f46; border: 1px solid #087f46; }
+a:hover { background: #066b3b; }
+button { background: #fff; color: #203d32; border: 1px solid #b6cbbc; font-size: 18px; }
+button:hover { background: #eef2e9; }
+a:focus-visible, button:focus-visible { outline: 3px solid #203d32; outline-offset: 4px; }
+p { margin: 24px 0; font-size: 15px; line-height: 1.8; text-align: center; color: #526558; }
+p strong { display: block; color: #203d32; font-size: 17px; }
+#status { min-height: 1.8em; margin: 12px 0 0; }
+#manual { width: 100%; margin-top: 12px; padding: 12px; font: inherit; font-size: 16px; border: 1px solid #b6cbbc; border-radius: 8px; }
+[hidden] { display: none !important; }
+</style>
 </head>
 <body>
-  <main>
-    <header class="hero">
-      <img class="avatar" src="../science-avatar.png" alt="Paco 老師頭像" width="132" height="132">
-      <h1>國二社群複習入口</h1>
-    </header>
-    <div class="join-panel">
-      <a class="join" href="https://line.me/ti/g2/yRZHQ3emPCDXucVXPNhX8YMTwfnoEKTUqXtFew?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default">加入社群的 LINE 連結</a>
-    </div>
-    <p class="help">如果無法加入，請洽詢官方 LINE：<strong>@498szsve</strong></p>
-  </main>
+<main>
+<a id="join" href="https://line.me/ti/g2/yRZHQ3emPCDXucVXPNhX8YMTwfnoEKTUqXtFew?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default">加入 LINE 社群</a>
+<p>若 Facebook／Messenger 內建瀏覽器無法開啟<strong>右上角 ⋯ → 在瀏覽器中開啟</strong></p>
+<button id="copy" type="button">複製 LINE 連結</button>
+<p id="status" role="status" aria-live="polite"></p>
+<input id="manual" aria-label="LINE 社群連結" readonly hidden>
+</main>
+<script>
+const join = document.querySelector('#join');
+const copy = document.querySelector('#copy');
+const status = document.querySelector('#status');
+const manual = document.querySelector('#manual');
+function fallbackCopy() {
+  manual.hidden = false;
+  manual.value = join.href;
+  manual.focus();
+  manual.select();
+  manual.setSelectionRange(0, manual.value.length);
+  let copied = false;
+  try { copied = document.execCommand('copy'); } catch (_) {}
+  if (copied) { manual.hidden = true; copy.focus(); }
+  return copied;
+}
+copy.addEventListener('click', async () => {
+  let copied = false;
+  manual.hidden = true;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(join.href);
+      copied = true;
+    } else { copied = fallbackCopy(); }
+  } catch (_) { copied = fallbackCopy(); }
+  status.textContent = copied ? '已複製 LINE 連結' : '請長按下方連結並複製';
+});
+</script>
 </body>
 </html>
