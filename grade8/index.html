@@ -60,3 +60,26 @@ const status = document.querySelector('#status');
 const manual = document.querySelector('#manual');
 function fallbackCopy() {
   manual.hidden = false;
+  manual.value = join.href;
+  manual.focus();
+  manual.select();
+  manual.setSelectionRange(0, manual.value.length);
+  let copied = false;
+  try { copied = document.execCommand('copy'); } catch (_) {}
+  if (copied) { manual.hidden = true; copy.focus(); }
+  return copied;
+}
+copy.addEventListener('click', async () => {
+  let copied = false;
+  manual.hidden = true;
+  try {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      await navigator.clipboard.writeText(join.href);
+      copied = true;
+    } else { copied = fallbackCopy(); }
+  } catch (_) { copied = fallbackCopy(); }
+  status.textContent = copied ? '已複製 LINE 連結' : '請長按下方連結並複製';
+});
+</script>
+</body>
+</html>
