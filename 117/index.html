@@ -5,30 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex">
   <title>117｜paco理化 VIP 班級入口</title>
-  <meta name="description" content="117 paco理化 VIP 班級入口，提供社群、作業小考群、Google Classroom 與教學影片連結。">
+  <meta name="description" content="117 paco理化 VIP 班級入口，提供 LINE 社群、Paco 學習基地與操作教學連結。">
   <style>
     :root {
       color-scheme: light;
       --line: #06c755;
-      --ink: #16201b;
-      --muted: #5d6a64;
+      --ink: #14252b;
+      --muted: #5b6d73;
       --panel: #ffffff;
-      --soft: #f4f7f2;
-      --edge: #dbe6df;
-      --strong-edge: #b8d0c0;
-      --accent: #285c3d;
-      --blue: #2864b6;
+      --soft: #eef8f8;
+      --edge: #d3e8ea;
+      --strong-edge: #9dc7ce;
+      --accent: #1f6f78;
+      --blue: #2a65a8;
       --blue-soft: #edf6ff;
       --gold: #946d19;
       --gold-soft: #fff7e8;
       --danger: #b63d2f;
       --danger-soft: #fff0ed;
-      --shadow: 0 12px 34px rgba(23, 33, 27, 0.1);
+      --shadow: 0 12px 34px rgba(18, 48, 55, 0.1);
     }
+
 
     * {
       box-sizing: border-box;
     }
+
 
     body {
       margin: 0;
@@ -36,12 +38,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC", sans-serif;
       color: var(--ink);
       background:
-        linear-gradient(180deg, #f8faf6 0%, #eef5f1 44%, #f8f9f5 100%);
+        linear-gradient(180deg, #f6fbfc 0%, #eaf6f7 44%, #f8fbfa 100%);
     }
 
-    body.modal-open {
-      overflow: hidden;
-    }
 
     main {
       width: min(100%, 820px);
@@ -49,35 +48,6 @@
       padding: 28px 16px 40px;
     }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 118px minmax(0, 1fr);
-      align-items: center;
-      gap: 18px;
-      padding: 16px 4px 22px;
-    }
-
-    .avatar {
-      width: 118px;
-      height: 118px;
-      display: grid;
-      place-items: center;
-      border: 2px solid #fff;
-      border-radius: 8px;
-      background: linear-gradient(145deg, var(--accent), #397c51);
-      box-shadow: 0 10px 26px rgba(23, 33, 27, 0.14);
-      color: #fff;
-      font-size: 22px;
-      font-weight: 800;
-      overflow: hidden;
-    }
-
-    .avatar img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
 
     h1,
     h2,
@@ -86,105 +56,6 @@
       margin-top: 0;
     }
 
-    h1 {
-      margin-bottom: 8px;
-      font-size: 29px;
-      line-height: 1.22;
-      letter-spacing: 0;
-    }
-
-    .intro {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    .class-tag {
-      width: fit-content;
-      max-width: 100%;
-      margin: 10px 0 0;
-      padding: 6px 10px;
-      border: 1px solid var(--strong-edge);
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 800;
-      line-height: 1.35;
-    }
-
-    .notice {
-      margin-bottom: 16px;
-      padding: 14px 16px;
-      border: 1px solid #f0d59b;
-      border-left: 5px solid #e3a234;
-      border-radius: 8px;
-      background: var(--gold-soft);
-      color: #5f3d10;
-      line-height: 1.65;
-    }
-
-    .notice strong {
-      color: #2a1b08;
-    }
-
-    .link-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .resource {
-      padding: 18px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: var(--panel);
-      box-shadow: var(--shadow);
-    }
-
-    .resource-head {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: start;
-    }
-
-    .resource-title {
-      margin-bottom: 7px;
-      font-size: 20px;
-      line-height: 1.3;
-      letter-spacing: 0;
-    }
-
-    .resource-note {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.58;
-    }
-
-    .badge {
-      min-width: max-content;
-      padding: 5px 9px;
-      border: 1px solid var(--strong-edge);
-      border-radius: 999px;
-      color: var(--accent);
-      background: var(--soft);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .badge.blue {
-      border-color: #bad0f0;
-      color: var(--blue);
-      background: var(--blue-soft);
-    }
-
-    .badge.gold {
-      border-color: #efd39c;
-      color: var(--gold);
-      background: var(--gold-soft);
-    }
 
     .action {
       width: 100%;
@@ -206,118 +77,25 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+
     .action.line {
       background: var(--line);
       box-shadow: 0 12px 24px rgba(6, 199, 85, 0.22);
     }
+
 
     .action.blue {
       background: var(--blue);
       box-shadow: 0 12px 24px rgba(40, 100, 182, 0.2);
     }
 
-    .action.gold {
-      background: var(--gold);
-      box-shadow: 0 12px 24px rgba(167, 106, 22, 0.18);
-    }
-
-    .action.secondary {
-      border: 1px solid var(--edge);
-      background: #fff;
-      color: var(--accent);
-      box-shadow: none;
-    }
-
-    .action:focus-visible,
-    .copy-button:focus-visible,
-    .modal-close:focus-visible {
-      outline: 3px solid rgba(6, 199, 85, 0.28);
-      outline-offset: 2px;
-    }
-
-    .action svg,
-    .copy-button svg,
-    .modal-close svg {
-      width: 20px;
-      height: 20px;
-      flex: 0 0 auto;
-    }
-
-    .helper {
-      margin-top: 12px;
-      padding: 12px 13px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: var(--soft);
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.58;
-    }
-
-    .helper strong {
-      color: var(--ink);
-    }
-
-    .copy-row {
-      margin-top: 12px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 8px;
-      align-items: stretch;
-      padding: 10px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: #f9fbf8;
-    }
-
-    .copy-text {
-      min-width: 0;
-      display: grid;
-      align-content: center;
-      gap: 3px;
-    }
-
-    .copy-label {
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.3;
-    }
-
-    .copy-value {
-      overflow: hidden;
-      color: var(--ink);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12px;
-      line-height: 1.35;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .copy-button {
-      min-width: 46px;
-      border: 1px solid var(--strong-edge);
-      border-radius: 8px;
-      background: #eef5ef;
-      color: var(--accent);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
-    .status {
-      min-height: 20px;
-      margin: 10px 2px 0;
-      color: var(--accent);
-      font-size: 13px;
-      line-height: 1.5;
-    }
 
     .rules {
       margin: 18px 0 16px;
       display: grid;
       gap: 12px;
     }
+
 
     .rule-box {
       padding: 15px 16px;
@@ -329,11 +107,13 @@
       line-height: 1.65;
     }
 
+
     .rule-box.warning {
       border-color: #f0c3ba;
       background: var(--danger-soft);
       color: #633027;
     }
+
 
     .rule-box h2 {
       margin-bottom: 7px;
@@ -343,99 +123,22 @@
       letter-spacing: 0;
     }
 
+
     .rule-box p {
       margin-bottom: 0;
     }
+
 
     .rule-box strong {
       color: var(--ink);
     }
 
-    .flow-alert {
-      margin-bottom: 16px;
-      padding: 15px 16px;
-      border: 1px solid #f0d59b;
-      border-left: 5px solid #e3a234;
-      border-radius: 8px;
-      background: var(--gold-soft);
-      color: #5f3d10;
-      font-size: 15px;
-      line-height: 1.65;
-    }
-
-    .flow-alert strong {
-      color: #2a1b08;
-    }
-
-    .flow-progress {
-      margin-bottom: 16px;
-      padding: 14px 16px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: var(--shadow);
-    }
-
-    .progress-track {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 8px;
-      align-items: start;
-    }
-
-    .progress-item {
-      display: grid;
-      gap: 6px;
-      justify-items: center;
-      color: var(--muted);
-      font-size: 12px;
-      line-height: 1.35;
-      text-align: center;
-    }
-
-    .progress-dot {
-      width: 30px;
-      height: 30px;
-      display: inline-grid;
-      place-items: center;
-      border: 1px solid var(--edge);
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 900;
-    }
-
-    .progress-item.active,
-    .progress-item.done {
-      color: var(--ink);
-    }
-
-    .progress-item.active .progress-dot {
-      border-color: var(--accent);
-      background: var(--accent);
-      color: #fff;
-    }
-
-    .progress-item.done .progress-dot {
-      border-color: var(--line);
-      background: var(--line);
-      color: #fff;
-    }
-
-    .progress-text {
-      min-height: 22px;
-      margin: 12px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-      text-align: center;
-    }
 
     .flow-list {
       display: grid;
       gap: 14px;
     }
+
 
     .flow-step {
       position: relative;
@@ -446,13 +149,6 @@
       box-shadow: var(--shadow);
     }
 
-    .flow-step.locked {
-      opacity: 0.58;
-    }
-
-    .flow-step.completed {
-      border-color: var(--strong-edge);
-    }
 
     .step-head {
       display: grid;
@@ -460,6 +156,7 @@
       gap: 12px;
       align-items: start;
     }
+
 
     .step-number {
       width: 34px;
@@ -473,12 +170,14 @@
       font-weight: 900;
     }
 
+
     .step-title {
       margin-bottom: 7px;
       font-size: 20px;
       line-height: 1.3;
       letter-spacing: 0;
     }
+
 
     .step-note {
       margin-bottom: 0;
@@ -487,136 +186,13 @@
       line-height: 1.58;
     }
 
-    .step-status {
-      min-width: max-content;
-      padding: 5px 9px;
-      border: 1px solid var(--edge);
-      border-radius: 999px;
-      background: var(--soft);
-      color: var(--accent);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .flow-step.locked .step-status {
-      color: var(--muted);
-      background: #f2f4f4;
-    }
-
-    .flow-step.completed .step-status {
-      border-color: rgba(6, 199, 85, 0.32);
-      background: #ecfbf2;
-      color: #168447;
-    }
-
-    .critical-list {
-      margin-top: 14px;
-      display: grid;
-      gap: 8px;
-    }
-
-    .critical-item {
-      padding: 11px 12px;
-      border: 1px solid #f0c3ba;
-      border-radius: 8px;
-      background: var(--danger-soft);
-      color: #633027;
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .critical-item strong {
-      color: var(--ink);
-    }
-
-    .guide-image-wrap {
-      margin-top: 14px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: #fff;
-      overflow: hidden;
-    }
-
-    .guide-image {
-      width: 100%;
-      display: block;
-      background: #fff;
-    }
-
-    .guide-caption {
-      margin: 0;
-      padding: 10px 12px;
-      border-top: 1px solid var(--edge);
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .check-row {
-      margin-top: 14px;
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 10px;
-      align-items: start;
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    .check-row input {
-      width: 20px;
-      height: 20px;
-      margin: 2px 0 0;
-      accent-color: var(--accent);
-    }
-
-    .step-actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .step-actions.single {
-      grid-template-columns: 1fr;
-    }
-
-    .locked-note,
-    .gate-status {
-      margin: 12px 0 0;
-      padding: 11px 12px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: #f9fbf8;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.55;
-    }
-
-    .locked-note {
-      display: none;
-    }
-
-    .flow-step.locked .locked-note {
-      display: block;
-    }
-
-    .action[aria-disabled="true"],
-    .action:disabled {
-      opacity: 0.48;
-      pointer-events: none;
-      cursor: not-allowed;
-    }
-
-    .button-action {
-      appearance: none;
-    }
 
     .line-options {
       margin-top: 14px;
       display: grid;
       gap: 12px;
     }
+
 
     .line-option {
       padding: 14px;
@@ -625,12 +201,14 @@
       background: #fff;
     }
 
+
     .line-option h3 {
       margin-bottom: 6px;
       font-size: 17px;
       line-height: 1.35;
       letter-spacing: 0;
     }
+
 
     .line-option p {
       margin-bottom: 0;
@@ -639,379 +217,61 @@
       line-height: 1.55;
     }
 
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 30;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(14, 22, 18, 0.58);
-    }
-
-    .modal-backdrop.active {
-      display: flex;
-    }
-
-    .modal {
-      width: min(100%, 560px);
-      max-height: min(760px, calc(100vh - 36px));
-      overflow: auto;
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.24);
-    }
-
-    .modal-top {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto;
-      gap: 12px;
-      align-items: start;
-      padding: 18px 18px 0;
-    }
-
-    .modal-title {
-      margin-bottom: 6px;
-      font-size: 22px;
-      line-height: 1.32;
-      letter-spacing: 0;
-    }
-
-    .modal-subtitle {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.58;
-    }
-
-    .modal-close {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: #fff;
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-
-    .modal-body {
-      padding: 16px 18px 18px;
-    }
-
-    .modal-alert {
-      padding: 13px 14px;
-      border: 1px solid #f0d59b;
-      border-radius: 8px;
-      background: var(--gold-soft);
-      color: #5f3d10;
-      font-size: 15px;
-      line-height: 1.62;
-    }
-
-    .modal-alert strong {
-      color: #2a1b08;
-    }
-
-    .modal-name-rule {
-      margin-bottom: 12px;
-      padding: 13px 14px;
-      border: 1px solid var(--strong-edge);
-      border-radius: 8px;
-      background: var(--soft);
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.62;
-    }
-
-    .modal-name-rule strong {
-      color: var(--ink);
-    }
-
-    .video-actions {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .video-actions .action {
-      min-height: 50px;
-      margin-top: 0;
-      font-size: 15px;
-    }
-
-    .countdown {
-      margin-top: 14px;
-      padding: 12px 14px;
-      border: 1px solid var(--edge);
-      border-radius: 8px;
-      background: #f9fbf8;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
-      text-align: center;
-    }
-
-    .countdown strong {
-      color: var(--danger);
-      font-size: 20px;
-    }
-
-    .modal-primary {
-      width: 100%;
-      margin-top: 12px;
-    }
-
-    .modal-primary[aria-disabled="true"] {
-      opacity: 0.48;
-      pointer-events: none;
-    }
-
-    @media (max-width: 620px) {
       main {
         padding-top: 20px;
       }
 
-      .hero {
-        grid-template-columns: 92px minmax(0, 1fr);
-        gap: 12px;
-      }
-
-      .avatar {
-        width: 92px;
-        height: 92px;
-      }
-
-      h1 {
-        font-size: 23px;
-      }
-
-      .intro {
-        font-size: 15px;
-      }
-
-      .resource-head {
-        grid-template-columns: 1fr;
-      }
-
-      .badge {
-        width: fit-content;
-      }
-
-      .progress-track {
-        grid-template-columns: 1fr;
-        gap: 6px;
-      }
-
-      .progress-item {
-        grid-template-columns: auto minmax(0, 1fr);
-        justify-items: start;
-        text-align: left;
-      }
 
       .step-head {
         grid-template-columns: auto minmax(0, 1fr);
       }
+    .action { padding: 12px; text-align: center; line-height: 1.5; }
+    .action:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .action svg { width: 20px; height: 20px; flex: 0 0 auto; }
+    .step-head { grid-template-columns: auto minmax(0, 1fr); }
+    @media (max-width: 620px) {
+      main { padding-top: 20px; }
+    }
 
-      .step-status {
-        grid-column: 1 / -1;
-        width: fit-content;
-      }
-
-      .step-actions {
-        grid-template-columns: 1fr;
-      }
-
-      .video-actions {
-        grid-template-columns: 1fr;
-      }
+    .hero {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      padding: 0 4px 22px;
+    }
+    .avatar {
+      width: 118px;
+      height: 118px;
+      display: block;
+      object-fit: cover;
+      border: 2px solid #fff;
+      border-radius: 8px;
+      box-shadow: 0 10px 26px rgba(18, 48, 55, 0.14);
+    }
+    .hero h1 { margin: 0; font-size: 29px; line-height: 1.3; }
+    @media (max-width: 620px) {
+      .hero { grid-template-columns: 92px minmax(0, 1fr); gap: 12px; }
+      .avatar { width: 92px; height: 92px; }
+      .hero h1 { font-size: 23px; }
     }
   </style>
 </head>
 <body>
   <main>
     <header class="hero">
-      <div class="avatar" aria-hidden="true">
-        <img src="../science-avatar.png" alt="">
-      </div>
-      <div>
-        <h1>117｜paco理化 VIP 班級入口</h1>
-        <p class="intro">已報名學生與家長請從這裡加入社群、Classroom，並先看完兩支操作教學影片。</p>
-        <p class="class-tag">目前入口：117 paco理化 VIP</p>
-      </div>
+      <img class="avatar" src="../science-avatar.png" alt="Paco 老師頭像" width="118" height="118">
+      <h1>117｜paco理化 VIP 班級入口</h1>
     </header>
-
-    <section class="flow-alert" aria-label="重要流程提醒">
-      <strong>請依照順序完成，LINE 社群會先鎖住。</strong>Google 帳號一定要是學生本人名字，不可以用家長帳號，也不可以用學校帳號。前面的 Classroom 流程沒有完成，就不能加入 LINE 社群。
-    </section>
-
-    <section class="flow-progress" aria-label="完成進度">
-      <div class="progress-track">
-        <div class="progress-item active" data-progress="account">
-          <span class="progress-dot">1</span>
-          <span>帳號名稱</span>
-        </div>
-        <div class="progress-item" data-progress="classroom">
-          <span class="progress-dot">2</span>
-          <span>加入 Classroom</span>
-        </div>
-        <div class="progress-item" data-progress="classroomVideo">
-          <span class="progress-dot">3</span>
-          <span>Classroom 影片</span>
-        </div>
-        <div class="progress-item" data-progress="resourceVideo">
-          <span class="progress-dot">4</span>
-          <span>資源影片</span>
-        </div>
-        <div class="progress-item" data-progress="line">
-          <span class="progress-dot">5</span>
-          <span>LINE 社群</span>
-        </div>
-      </div>
-      <p class="progress-text" id="progressText">目前請先確認 Google 帳號名稱是學生本人名字。</p>
-    </section>
-
-    <section class="flow-list" aria-label="117 班級加入流程">
-      <article class="flow-step" data-step="account">
+    <section class="flow-list" aria-label="117 班級入口">
+      <article class="flow-step" aria-labelledby="community-title">
         <div class="step-head">
-          <span class="step-number">1</span>
+          <span class="step-number" aria-hidden="true">1</span>
           <div>
-            <h2 class="step-title">確認 Google 帳號名稱</h2>
-            <p class="step-note">加入 Classroom 前，請先確認使用的是學生本人的 Google 帳號，而且帳號名稱是學生姓名。</p>
+            <h2 class="step-title" id="community-title">加入 LINE 社群</h2>
+            <p class="step-note">請先確認下方名稱規則，再加入班級社群與作業小考群。</p>
           </div>
-          <span class="step-status" data-step-status="account">進行中</span>
         </div>
-
-        <div class="critical-list">
-          <div class="critical-item"><strong>一定要用學生本人的名字。</strong>paco 老師要在 Classroom 裡看得出是哪位學生。</div>
-          <div class="critical-item"><strong>不可以用家長名字或家長帳號。</strong>不要出現媽媽、爸爸或家長本人的姓名。</div>
-          <div class="critical-item"><strong>不可以用學校帳號。</strong>學校帳號常有權限限制，可能無法正常加入或繳交作業。</div>
-        </div>
-
-        <div class="guide-image-wrap">
-          <img class="guide-image" src="google-account-name-guide.png" alt="Google 帳號名稱修改步驟">
-          <p class="guide-caption">如果不知道怎麼改 Google 帳號名稱，請先照這張圖確認：點右上角帳號頭像，進入管理 Google 帳戶，再到個人資訊修改名稱。</p>
-        </div>
-
-        <label class="check-row">
-          <input type="checkbox" id="accountCheck">
-          <span>我已確認 Google 帳號是學生本人使用，名稱是學生姓名，不是家長名字，也不是學校帳號。</span>
-        </label>
-
-        <div class="step-actions single">
-          <button class="action button-action" type="button" id="accountDone" disabled>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            完成帳號確認
-          </button>
-        </div>
-      </article>
-
-      <article class="flow-step locked" data-step="classroom">
-        <div class="step-head">
-          <span class="step-number">2</span>
-          <div>
-            <h2 class="step-title">加入 Google Classroom</h2>
-            <p class="step-note">請使用剛剛確認好的學生姓名 Google 帳號加入 Classroom。</p>
-          </div>
-          <span class="step-status" data-step-status="classroom">未開放</span>
-        </div>
-
-        <p class="locked-note">請先完成第 1 步：確認 Google 帳號名稱。</p>
-
-        <div class="step-actions">
-          <a class="action blue" href="https://classroom.google.com/c/ODY5MDE4NDAyOTI0?cjc=lkonhurz" target="_blank" rel="noopener" id="classroomLink" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            前往 Google Classroom
-          </a>
-          <button class="action button-action secondary" type="button" id="classroomDone" disabled>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            我已加入 Classroom
-          </button>
-        </div>
-        <p class="gate-status" id="classroomStatus">請先點開 Classroom，加入完成後回到此頁確認。</p>
-      </article>
-
-      <article class="flow-step locked" data-step="classroomVideo">
-        <div class="step-head">
-          <span class="step-number">3</span>
-          <div>
-            <h2 class="step-title">觀看 Classroom／作業繳交教學影片</h2>
-            <p class="step-note">加入 Classroom 後，請看這支影片，了解作業要怎麼上傳與繳交。</p>
-          </div>
-          <span class="step-status" data-step-status="classroomVideo">未開放</span>
-        </div>
-
-        <p class="locked-note">請先完成第 2 步：加入 Google Classroom。</p>
-
-        <div class="step-actions">
-          <a class="action blue" href="https://www.youtube.com/shorts/XhpVTYgaL1o" target="_blank" rel="noopener" data-video-link="classroomVideo" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m10 8 6 4-6 4V8Z" fill="currentColor"/>
-              <path d="M3 12c0-3.2.3-5 1.1-5.9C5 5.3 6.8 5 12 5s7 .3 7.9 1.1c.8.9 1.1 2.7 1.1 5.9s-.3 5-1.1 5.9C19 18.7 17.2 19 12 19s-7-.3-7.9-1.1C3.3 17 3 15.2 3 12Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            觀看 Classroom 影片
-          </a>
-          <button class="action button-action secondary" type="button" id="classroomVideoDone" disabled>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            我已看完影片
-          </button>
-        </div>
-        <p class="gate-status" id="classroomVideoStatus">完成第 2 步後，請先點開影片觀看。</p>
-      </article>
-
-      <article class="flow-step locked" data-step="resourceVideo">
-        <div class="step-head">
-          <span class="step-number">4</span>
-          <div>
-            <h2 class="step-title">觀看資源統整使用教學影片</h2>
-            <p class="step-note">這支影片說明上課資源放在哪裡、要怎麼找，請看完後再加入 LINE 社群。</p>
-          </div>
-          <span class="step-status" data-step-status="resourceVideo">未開放</span>
-        </div>
-
-        <p class="locked-note">請先完成第 3 步：看完 Classroom／作業繳交教學影片。</p>
-
-        <div class="step-actions">
-          <a class="action gold" href="https://www.youtube.com/watch?v=eUQ9YtZFULQ" target="_blank" rel="noopener" data-video-link="resourceVideo" aria-disabled="true">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m10 8 6 4-6 4V8Z" fill="currentColor"/>
-              <path d="M3 12c0-3.2.3-5 1.1-5.9C5 5.3 6.8 5 12 5s7 .3 7.9 1.1c.8.9 1.1 2.7 1.1 5.9s-.3 5-1.1 5.9C19 18.7 17.2 19 12 19s-7-.3-7.9-1.1C3.3 17 3 15.2 3 12Z" stroke="currentColor" stroke-width="2"/>
-            </svg>
-            觀看資源統整影片
-          </a>
-          <button class="action button-action secondary" type="button" id="resourceVideoDone" disabled>
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            我已看完影片
-          </button>
-        </div>
-        <p class="gate-status" id="resourceVideoStatus">完成第 3 步後，請先點開影片觀看。</p>
-      </article>
-
-      <article class="flow-step locked" data-step="line">
-        <div class="step-head">
-          <span class="step-number">5</span>
-          <div>
-            <h2 class="step-title">加入 LINE 社群</h2>
-            <p class="step-note">前面四步完成後，才能加入班級社群與作業小考群。</p>
-          </div>
-          <span class="step-status" data-step-status="line">未開放</span>
-        </div>
-
-        <p class="locked-note">請先完成第 4 步：看完資源統整使用教學影片。</p>
 
         <div class="rules">
           <div class="rule-box">
@@ -1034,392 +294,62 @@
           <div class="line-option">
             <h3>117｜paco理化vip群</h3>
             <p>課程主要通知與班級溝通社群。</p>
-            <button class="action button-action line" type="button" data-line-link="main" disabled>
+            <a class="action line" href="https://line.me/ti/g2/Y9O7qcHR6rGYTtIhC-1P-GECzbT3FZa5UWBJyw?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               加入班級社群
-            </button>
+            </a>
           </div>
 
           <div class="line-option">
             <h3>117｜paco作業小考群</h3>
             <p>作業、小考與繳交相關提醒會放在這裡。</p>
-            <button class="action button-action line" type="button" data-line-link="homework" disabled>
+            <a class="action line" href="https://line.me/ti/g2/ZlS36EvL-BaR1IIbDiicl4HdFtZ8j8EmWeOIKQ?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               加入作業小考群
-            </button>
+            </a>
           </div>
         </div>
-        <p class="gate-status" id="lineStatus">完成前面所有步驟後，LINE 社群才會解鎖。</p>
+      </article>
+      <article class="flow-step" aria-labelledby="resource-2">
+        <div class="step-head">
+          <span class="step-number" aria-hidden="true">2</span>
+          <h2 class="step-title" id="resource-2">Paco 學習基地入口</h2>
+        </div>
+        <a class="action" href="https://attendance-mvp.pacorock6666.workers.dev/student?openExternalBrowser=1" target="_blank" rel="noopener noreferrer">進入 Paco 學習基地</a>
+      </article>
+      <article class="flow-step" aria-labelledby="resource-3">
+        <div class="step-head">
+          <span class="step-number" aria-hidden="true">3</span>
+          <h2 class="step-title" id="resource-3">首次綁定與簽到請假教學</h2>
+        </div>
+        <a class="action blue" href="https://www.youtube.com/watch?v=OQRHFwsg1h8" target="_blank" rel="noopener noreferrer">觀看首次綁定與簽到請假教學</a>
+      </article>
+      <article class="flow-step" aria-labelledby="resource-4">
+        <div class="step-head">
+          <span class="step-number" aria-hidden="true">4</span>
+          <h2 class="step-title" id="resource-4">教材資源使用教學</h2>
+        </div>
+        <a class="action blue" href="https://www.youtube.com/shorts/YjCSCmaSsDY" target="_blank" rel="noopener noreferrer">觀看教材資源使用教學</a>
+      </article>
+      <article class="flow-step" aria-labelledby="resource-5">
+        <div class="step-head">
+          <span class="step-number" aria-hidden="true">5</span>
+          <h2 class="step-title" id="resource-5">作業繳交教學</h2>
+        </div>
+        <a class="action blue" href="https://www.youtube.com/shorts/MqOecfLEjEU" target="_blank" rel="noopener noreferrer">觀看作業繳交教學</a>
+      </article>
+      <article class="flow-step" aria-labelledby="resource-6">
+        <div class="step-head">
+          <span class="step-number" aria-hidden="true">6</span>
+          <h2 class="step-title" id="resource-6">申請補繳作業教學</h2>
+        </div>
+        <a class="action blue" href="https://www.youtube.com/shorts/VuwnfKftAZw" target="_blank" rel="noopener noreferrer">觀看申請補繳作業教學</a>
       </article>
     </section>
   </main>
-
-  <div class="modal-backdrop" id="lineModal" aria-hidden="true">
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
-      <div class="modal-top">
-        <div>
-          <h2 class="modal-title" id="modalTitle">加入社群前，請先確認名稱格式</h2>
-          <p class="modal-subtitle" id="modalDesc">名稱格式正確，paco 老師才認得出是哪位學生與家長。</p>
-        </div>
-        <button class="modal-close" type="button" id="closeModal" aria-label="關閉提醒">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-
-      <div class="modal-body">
-        <div class="modal-name-rule">
-          <strong>加入 LINE 社群請使用指定名稱：</strong><br>
-          家長：學生名字 + 媽/爸 + 報名手機末三碼，例如 <strong>百宏媽313</strong><br>
-          學生：學生名字 + 報名手機末三碼，例如 <strong>百宏313</strong>
-        </div>
-
-        <div class="modal-alert">
-          <strong>請最後再確認一次：</strong><br>
-          Google Classroom 已使用學生姓名帳號加入，資源統整使用教學影片也已看完。加入 LINE 社群時，請輸入密碼 <strong>rock1234</strong>。
-        </div>
-
-        <div class="countdown" id="countdownText" aria-live="polite">
-          請先閱讀提醒，<strong>10</strong> 秒後可前往社群。
-        </div>
-
-        <a class="action line modal-primary" id="modalGo" href="#" rel="noopener" aria-disabled="true">
-          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          我已確認名稱格式，前往 LINE 社群
-        </a>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    const STORAGE_KEY = "paco-117-flow-v1";
-    const VIDEO_WAIT_SECONDS = 10;
-    const LINE_WAIT_SECONDS = 10;
-    const LINE_LINKS = {
-      main: "https://line.me/ti/g2/Y9O7qcHR6rGYTtIhC-1P-GECzbT3FZa5UWBJyw?utm_source=invitation&utm_medium=link_copy&utm_campaign=default",
-      homework: "https://line.me/ti/g2/ZlS36EvL-BaR1IIbDiicl4HdFtZ8j8EmWeOIKQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default"
-    };
-
-    const STEP_ORDER = ["account", "classroom", "classroomVideo", "resourceVideo", "line"];
-    const STEP_LABELS = {
-      account: "確認 Google 帳號名稱",
-      classroomVideo: "觀看 Classroom／作業繳交教學影片",
-      classroom: "加入 Google Classroom",
-      resourceVideo: "觀看資源統整使用教學影片",
-      line: "加入 LINE 社群"
-    };
-
-    const DEFAULT_STATE = {
-      accountDone: false,
-      classroomVideoOpened: false,
-      classroomVideoReadyAt: 0,
-      classroomVideoDone: false,
-      classroomOpened: false,
-      classroomDone: false,
-      resourceVideoOpened: false,
-      resourceVideoReadyAt: 0,
-      resourceVideoDone: false
-    };
-
-    let flowState = loadState();
-    let tickTimer = null;
-    const lineModal = document.querySelector("#lineModal");
-    const closeModalButton = document.querySelector("#closeModal");
-    const countdownText = document.querySelector("#countdownText");
-    const modalGo = document.querySelector("#modalGo");
-    let countdownTimer = null;
-    let activeTrigger = null;
-
-    const accountCheck = document.querySelector("#accountCheck");
-    const accountDoneButton = document.querySelector("#accountDone");
-    const classroomVideoDoneButton = document.querySelector("#classroomVideoDone");
-    const classroomLink = document.querySelector("#classroomLink");
-    const classroomDoneButton = document.querySelector("#classroomDone");
-    const resourceVideoDoneButton = document.querySelector("#resourceVideoDone");
-    const classroomVideoStatus = document.querySelector("#classroomVideoStatus");
-    const classroomStatus = document.querySelector("#classroomStatus");
-    const resourceVideoStatus = document.querySelector("#resourceVideoStatus");
-    const lineStatus = document.querySelector("#lineStatus");
-    const progressText = document.querySelector("#progressText");
-
-    function loadState() {
-      try {
-        return { ...DEFAULT_STATE, ...JSON.parse(localStorage.getItem(STORAGE_KEY)) };
-      } catch (error) {
-        return { ...DEFAULT_STATE };
-      }
-    }
-
-    function saveState() {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(flowState));
-    }
-
-    function isVideoReady(key) {
-      return Boolean(flowState[`${key}Opened`] && flowState[`${key}ReadyAt`] && Date.now() >= flowState[`${key}ReadyAt`]);
-    }
-
-    function getStepState(step) {
-      if (step === "account") return flowState.accountDone;
-      if (step === "classroomVideo") return flowState.classroomVideoDone;
-      if (step === "classroom") return flowState.classroomDone;
-      if (step === "resourceVideo") return flowState.resourceVideoDone;
-      if (step === "line") return false;
-      return false;
-    }
-
-    function isStepUnlocked(step) {
-      if (step === "account") return true;
-      if (step === "classroom") return flowState.accountDone;
-      if (step === "classroomVideo") return flowState.classroomDone;
-      if (step === "resourceVideo") return flowState.classroomVideoDone;
-      if (step === "line") return flowState.resourceVideoDone;
-      return false;
-    }
-
-    function currentStep() {
-      return STEP_ORDER.find((step) => !getStepState(step)) || "line";
-    }
-
-    function setAriaDisabled(element, disabled) {
-      if (!element) return;
-      element.setAttribute("aria-disabled", disabled ? "true" : "false");
-    }
-
-    function setStepStatus(step, label) {
-      const status = document.querySelector(`[data-step-status="${step}"]`);
-      if (status) status.textContent = label;
-    }
-
-    function updateStepCards() {
-      const activeStep = currentStep();
-
-      STEP_ORDER.forEach((step) => {
-        const card = document.querySelector(`[data-step="${step}"]`);
-        const progress = document.querySelector(`[data-progress="${step}"]`);
-        const done = getStepState(step);
-        const unlocked = isStepUnlocked(step);
-
-        if (card) {
-          card.classList.toggle("locked", !unlocked);
-          card.classList.toggle("completed", done);
-        }
-
-        if (progress) {
-          progress.classList.toggle("done", done);
-          progress.classList.toggle("active", step === activeStep && !done);
-        }
-
-        setStepStatus(step, done ? "已完成" : unlocked ? "進行中" : "未開放");
-      });
-
-      progressText.textContent = getProgressText(activeStep);
-    }
-
-    function getProgressText(step) {
-      if (flowState.resourceVideoDone) return "Classroom 流程與資源統整影片已完成，可以加入 LINE 社群。";
-      if (step === "account") return "目前請先確認 Google 帳號名稱是學生本人名字，不是家長名字，也不是學校帳號。";
-      if (step === "classroom") return "請使用學生姓名 Google 帳號加入 Google Classroom。";
-      if (step === "classroomVideo") return "請觀看 Classroom／作業繳交教學影片，了解作業如何上傳與繳交。";
-      if (step === "resourceVideo") return "請觀看資源統整使用教學影片，完成後才會開放 LINE 社群。";
-      return "請依序完成所有步驟。";
-    }
-
-    function updateControls() {
-      accountCheck.checked = flowState.accountDone || accountCheck.checked;
-      accountCheck.disabled = flowState.accountDone;
-      accountDoneButton.disabled = flowState.accountDone || !accountCheck.checked;
-
-      const classroomVideoUnlocked = isStepUnlocked("classroomVideo");
-      document.querySelectorAll('[data-video-link="classroomVideo"]').forEach((link) => {
-        setAriaDisabled(link, !classroomVideoUnlocked || flowState.classroomVideoDone);
-      });
-      classroomVideoDoneButton.disabled = !classroomVideoUnlocked || flowState.classroomVideoDone || !isVideoReady("classroomVideo");
-
-      const classroomUnlocked = isStepUnlocked("classroom");
-      setAriaDisabled(classroomLink, !classroomUnlocked || flowState.classroomDone);
-      classroomDoneButton.disabled = !classroomUnlocked || flowState.classroomDone || !flowState.classroomOpened;
-
-      const resourceVideoUnlocked = isStepUnlocked("resourceVideo");
-      document.querySelectorAll('[data-video-link="resourceVideo"]').forEach((link) => {
-        setAriaDisabled(link, !resourceVideoUnlocked || flowState.resourceVideoDone);
-      });
-      resourceVideoDoneButton.disabled = !resourceVideoUnlocked || flowState.resourceVideoDone || !isVideoReady("resourceVideo");
-
-      const lineUnlocked = isStepUnlocked("line");
-      document.querySelectorAll("[data-line-link]").forEach((button) => {
-        button.disabled = !lineUnlocked;
-      });
-    }
-
-    function remainingSeconds(key) {
-      return Math.max(0, Math.ceil((flowState[`${key}ReadyAt`] - Date.now()) / 1000));
-    }
-
-    function updateStatuses() {
-      classroomVideoStatus.textContent = videoStatusText("classroomVideo", "Classroom／作業繳交影片");
-      classroomStatus.textContent = flowState.classroomDone
-        ? "已確認加入 Google Classroom。"
-        : flowState.classroomOpened
-          ? "如果已成功加入 Classroom，請按「我已加入 Classroom」。"
-          : "請先點開 Classroom，加入完成後回到此頁確認。";
-      resourceVideoStatus.textContent = videoStatusText("resourceVideo", "資源統整使用教學影片");
-      lineStatus.textContent = flowState.resourceVideoDone
-        ? "LINE 社群已解鎖。點擊社群按鈕後，還會再確認名稱格式並倒數 10 秒。"
-        : "完成前面所有步驟後，LINE 社群才會解鎖。";
-    }
-
-    function videoStatusText(key, label) {
-      if (flowState[`${key}Done`]) return `已確認看完${label}。`;
-      if (!isStepUnlocked(key)) return `完成上一個步驟後，才會開放${label}。`;
-      if (!flowState[`${key}Opened`]) return `請先點開${label}觀看。`;
-      if (!isVideoReady(key)) return `請在新分頁看完影片，${remainingSeconds(key)} 秒後可回來確認。`;
-      return `如果已看完${label}，請按「我已看完影片」。`;
-    }
-
-    function updateFlow() {
-      updateStepCards();
-      updateControls();
-      updateStatuses();
-    }
-
-    function startVideoGate(key) {
-      if (!isStepUnlocked(key) || flowState[`${key}Done`]) return;
-      flowState[`${key}Opened`] = true;
-      flowState[`${key}ReadyAt`] = Date.now() + VIDEO_WAIT_SECONDS * 1000;
-      saveState();
-      ensureTicker();
-      updateFlow();
-    }
-
-    function ensureTicker() {
-      clearInterval(tickTimer);
-      tickTimer = setInterval(() => {
-        updateFlow();
-        const classroomPending = flowState.classroomVideoOpened && !flowState.classroomVideoDone && !isVideoReady("classroomVideo");
-        const resourcePending = flowState.resourceVideoOpened && !flowState.resourceVideoDone && !isVideoReady("resourceVideo");
-
-        if (!classroomPending && !resourcePending) {
-          clearInterval(tickTimer);
-          tickTimer = null;
-        }
-      }, 500);
-    }
-
-    function completeStep(key) {
-      if (key === "account") flowState.accountDone = true;
-      if (key === "classroomVideo" && isVideoReady("classroomVideo")) flowState.classroomVideoDone = true;
-      if (key === "classroom" && flowState.classroomOpened) flowState.classroomDone = true;
-      if (key === "resourceVideo" && isVideoReady("resourceVideo")) flowState.resourceVideoDone = true;
-      saveState();
-      updateFlow();
-    }
-
-    function guardDisabledLink(event) {
-      const link = event.currentTarget;
-      if (link.getAttribute("aria-disabled") === "true") {
-        event.preventDefault();
-        return true;
-      }
-
-      return false;
-    }
-
-    function openReminder(key, trigger) {
-      if (!flowState.resourceVideoDone) return;
-
-      let remaining = LINE_WAIT_SECONDS;
-      activeTrigger = trigger;
-      modalGo.href = LINE_LINKS[key];
-      modalGo.setAttribute("aria-disabled", "true");
-      countdownText.innerHTML = `請先閱讀提醒，<strong>${remaining}</strong> 秒後可前往社群。`;
-      lineModal.classList.add("active");
-      lineModal.setAttribute("aria-hidden", "false");
-      document.body.classList.add("modal-open");
-      closeModalButton.focus();
-
-      clearInterval(countdownTimer);
-      countdownTimer = setInterval(() => {
-        remaining -= 1;
-        if (remaining <= 0) {
-          clearInterval(countdownTimer);
-          countdownTimer = null;
-          countdownText.innerHTML = "可以前往社群了。請確認 LINE 名稱格式正確，並輸入社群密碼 rock1234。";
-          modalGo.setAttribute("aria-disabled", "false");
-          return;
-        }
-
-        countdownText.innerHTML = `請先閱讀提醒，<strong>${remaining}</strong> 秒後可前往社群。`;
-      }, 1000);
-    }
-
-    function closeReminder() {
-      clearInterval(countdownTimer);
-      countdownTimer = null;
-      lineModal.classList.remove("active");
-      lineModal.setAttribute("aria-hidden", "true");
-      document.body.classList.remove("modal-open");
-      modalGo.href = "#";
-      modalGo.setAttribute("aria-disabled", "true");
-
-      if (activeTrigger) {
-        activeTrigger.focus();
-        activeTrigger = null;
-      }
-    }
-
-    accountCheck.addEventListener("change", updateControls);
-    accountDoneButton.addEventListener("click", () => completeStep("account"));
-
-    document.querySelectorAll("[data-video-link]").forEach((link) => {
-      link.addEventListener("click", (event) => {
-        if (guardDisabledLink(event)) return;
-        startVideoGate(link.dataset.videoLink);
-      });
-    });
-
-    classroomLink.addEventListener("click", (event) => {
-      if (guardDisabledLink(event)) return;
-      flowState.classroomOpened = true;
-      saveState();
-      updateFlow();
-    });
-
-    classroomVideoDoneButton.addEventListener("click", () => completeStep("classroomVideo"));
-    classroomDoneButton.addEventListener("click", () => completeStep("classroom"));
-    resourceVideoDoneButton.addEventListener("click", () => completeStep("resourceVideo"));
-
-    document.querySelectorAll("[data-line-link]").forEach((button) => {
-      button.addEventListener("click", () => openReminder(button.dataset.lineLink, button));
-    });
-
-    closeModalButton.addEventListener("click", closeReminder);
-
-    lineModal.addEventListener("click", (event) => {
-      if (event.target === lineModal) {
-        closeReminder();
-      }
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape" && lineModal.classList.contains("active")) {
-        closeReminder();
-      }
-    });
-
-    updateFlow();
-    if (
-      (flowState.classroomVideoOpened && !flowState.classroomVideoDone && !isVideoReady("classroomVideo")) ||
-      (flowState.resourceVideoOpened && !flowState.resourceVideoDone && !isVideoReady("resourceVideo"))
-    ) {
-      ensureTicker();
-    }
-  </script>
 </body>
 </html>
