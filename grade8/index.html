@@ -43,7 +43,8 @@ h1 span { display: inline-block; }
 .steps { display: grid; gap: 10px; list-style: none; padding: 0; margin: 15px 0 0; color: #3c493f; font-size: 15px; line-height: 1.5; }
 .steps li { display: flex; align-items: flex-start; gap: 8px; }
 .num { flex: 0 0 22px; border-radius: 50%; text-align: center; line-height: 22px; font-size: 13px; font-weight: 700; color: #6b4800; background: #ffe6a5; }
-.fallback #status:empty { display: none; }
+.fallback #status { color: #203d32; font-weight: 700; text-align: left; line-height: 1.55; }
+.fallback #status:empty { min-height: 0; margin: 0; }
 @media (max-width: 480px) { .fallback { padding: 14px; } }
 </style>
 </head>
@@ -57,14 +58,14 @@ h1 span { display: inline-block; }
 <a id="join" href="https://line.me/ti/g2/sf1BwPykMi43IW9NderDdiA1FmdL0aIYIKyQ1w?utm_source=invitation&amp;utm_medium=link_copy&amp;utm_campaign=default">加入 LINE 社群</a>
 <section class="fallback" aria-labelledby="fallback-title">
 <h2 id="fallback-title">加不進 LINE 社群怎麼辦？</h2>
-<button id="copy" type="button"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>複製 LINE 社群連結</button>
+<button id="copy" type="button"><svg aria-hidden="true" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg><span id="copy-label">複製 LINE 社群連結</span></button>
+<p id="status" role="status" aria-live="polite"></p>
+<input id="manual" aria-label="LINE 社群連結" readonly hidden>
 <ol class="steps">
 <li><span class="num">1</span><span>點上方黃色按鈕，複製連結。</span></li>
 <li><span class="num">2</span><span>離開 Facebook，打開手機的 <b>Safari 或 Chrome</b>。</span></li>
 <li><span class="num">3</span><span>長按<b>網址列</b>，點「貼上」，再按「前往」。</span></li>
 </ol>
-<p id="status" role="status" aria-live="polite"></p>
-<input id="manual" aria-label="LINE 社群連結" readonly hidden>
 </section>
 </div>
 <p class="help">如果無法加入，請洽詢官方 LINE：<strong>@498szsve</strong></p>
@@ -72,29 +73,63 @@ h1 span { display: inline-block; }
 <script>
 const join = document.querySelector('#join');
 const copy = document.querySelector('#copy');
+const label = document.querySelector('#copy-label');
 const status = document.querySelector('#status');
 const manual = document.querySelector('#manual');
-function fallbackCopy() {
-  manual.hidden = false;
-  manual.value = join.href;
-  manual.focus();
-  manual.select();
-  manual.setSelectionRange(0, manual.value.length);
-  let copied = false;
-  try { copied = document.execCommand('copy'); } catch (_) {}
-  if (copied) { manual.hidden = true; copy.focus(); }
-  return copied;
+let pending = false;
+
+function legacyCopy() {
+  const field = document.createElement('textarea');
+  field.value = join.href;
+  field.readOnly = true;
+  field.tabIndex = -1;
+  field.style.cssText = 'position:fixed;top:0;left:0;width:1px;height:1px;opacity:0;font-size:16px;';
+  document.body.appendChild(field);
+  try {
+    field.focus({preventScroll:true});
+    field.select();
+    field.setSelectionRange(0, field.value.length);
+    return document.execCommand('copy') === true;
+  } catch (_) {
+    return false;
+  } finally {
+    field.remove();
+    copy.focus({preventScroll:true});
+  }
 }
+
 copy.addEventListener('click', async () => {
-  let copied = false;
+  if (pending) return;
+  pending = true;
   manual.hidden = true;
+  label.textContent = '複製中…';
+  status.textContent = '';
+  let copied = false;
+  let timer;
   try {
     if (navigator.clipboard && navigator.clipboard.writeText) {
-      await navigator.clipboard.writeText(join.href);
-      copied = true;
-    } else { copied = fallbackCopy(); }
-  } catch (_) { copied = fallbackCopy(); }
-  status.textContent = copied ? '已複製！請到 Safari 或 Chrome 的網址列貼上' : '請長按下方連結並複製';
+      const result = await Promise.race([
+        navigator.clipboard.writeText(join.href).then(() => 'copied'),
+        new Promise(resolve => { timer = setTimeout(() => resolve('timeout'), 1500); })
+      ]);
+      copied = result === 'copied';
+    } else {
+      copied = legacyCopy();
+    }
+  } catch (_) {
+    copied = legacyCopy();
+  } finally {
+    clearTimeout(timer);
+  }
+  label.textContent = copied ? '✓ 已複製' : '複製 LINE 社群連結';
+  if (!copied) {
+    manual.value = join.href;
+    manual.hidden = false;
+  }
+  status.textContent = copied
+    ? '已複製！請到 Safari 或 Chrome 的網址列貼上。'
+    : '無法自動複製，請長按下方網址，選「全選」後再點「複製」。';
+  pending = false;
 });
 </script>
 </body>
